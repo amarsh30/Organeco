@@ -12,9 +12,9 @@
     <string name="title_menu_2">GHG emissions</string>
     <string name="title_menu_3">Recycle Compose</string>
     <string name="title_menu_4">Optimize Your Farming Practices!"</string>
-    <string name="desc_menu_1">Organeco, aplikasi inovatif untuk petani atau pengkebun, memberikan rekomendasi pupuk ramah lingkungan melalui analisis tanah dan panduan penggunaan pupuk organik, pupuk hijau, serta teknologi hijau lainnya. Tujuannya adalah mengurangi emisi gas rumah kaca dan dampak lingkungan negatif dalam pertanian dan perkebunan.</string>
+    <string name="desc_menu_1">Organeco, aplikasi inovatif untuk petani atau pengkebun, memberikan rekomendasi pupuk ramah lingkungan melalui analisis tanah dan panduan penggunaan pupuk organik, pupuk hijau, serta teknologi hijau lainnya.</string>
     <string name="desc_menu_2">Belajar kapan pun, di mana pun, secara mandiri. Bebas memilih kelas sesuai minat belajar. Akses seumur hidup ke kelas dan forum diskusi setelah lulus.</string>
-    <string name="desc_menu_3">Aplikasi rekomendasi pupuk ramah lingkungan adalah sebuah aplikasi yang dirancang untuk membantu petani dan individu yang terlibat dalam pertanian dalam menggunakan pupuk yang ramah lingkungan. Aplikasi ini memberikan rekomendasi pupuk yang mengutamakan praktik pertanian berkelanjutan dan mengurangi dampak negatif terhadap lingkungan.</string>
-    <string name="desc_menu_4">Sertifikat yang membuktikan pengetahuan fundamental beserta keterampilan nyata yang diinginkan perusahaan global.</string>
-    <string name="learn_now">Let;s Started</string>
+    <string name="desc_menu_3">Aplikasi rekomendasi pupuk ramah lingkungan adalah sebuah aplikasi yang dirancang untuk membantu petani dan individu yang terlibat dalam pertanian dalam menggunakan pupuk yang ramah lingkungan.</string>
+    <string name="desc_menu_4">"Ubah praktik pertanianmu dan perkebunanmu, kurangi dampak negatif, dan beralih ke pupuk ramah lingkungan dengan aplikasi ini!"</string>
+    <string name="learn_now">Get Started</string>
 </resources>
