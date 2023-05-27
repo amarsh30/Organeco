@@ -16,5 +16,6 @@
     <string name="desc_menu_2">Belajar kapan pun, di mana pun, secara mandiri. Bebas memilih kelas sesuai minat belajar. Akses seumur hidup ke kelas dan forum diskusi setelah lulus.</string>
     <string name="desc_menu_3">Aplikasi rekomendasi pupuk ramah lingkungan adalah sebuah aplikasi yang dirancang untuk membantu petani dan individu yang terlibat dalam pertanian dalam menggunakan pupuk yang ramah lingkungan.</string>
     <string name="desc_menu_4">"Ubah praktik pertanianmu dan perkebunanmu, kurangi dampak negatif, dan beralih ke pupuk ramah lingkungan dengan aplikasi ini!"</string>
-    <string name="learn_now">Get Started</string>
+    <string name="get_started">Get Started</string>
+    <string name="guest">Guest</string>
 </resources>
