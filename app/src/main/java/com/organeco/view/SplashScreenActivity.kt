@@ -1,4 +1,4 @@
-package com.organeco
+package com.organeco.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

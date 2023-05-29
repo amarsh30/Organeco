@@ -1,7 +1,8 @@
-package com.organeco
+package com.organeco.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.organeco.R
 
 class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
