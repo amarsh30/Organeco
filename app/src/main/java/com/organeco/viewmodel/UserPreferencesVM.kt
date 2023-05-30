@@ -3,19 +3,20 @@ package com.organeco.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.organeco.model.local.preferences.repository.PreferenceRepository
+import com.organeco.model.remote.respository.ApiRepository
 import kotlinx.coroutines.launch
 
-class UserPreferencesVM(private val PreferenceRepository : PreferenceRepository
+class UserPreferencesVM(private val repository: ApiRepository
 ): ViewModel() {
 
-    fun getUserName(): LiveData<String> = PreferenceRepository.getUserName()
-    fun getTokenKey(): LiveData<String> = PreferenceRepository.getTokenKey()
-    fun getUserId(): LiveData<String> = PreferenceRepository.getUserIdKey()
+    fun getUserName(): LiveData<String> = repository.getUserName()
+    fun getTokenKey(): LiveData<String> = repository.getUserToken()
+    fun getUserId(): LiveData<String> = repository.getIdUser()
+    fun getOnBoardStatus(): LiveData<Boolean> = repository.getOnBoardStatus()
 
-    fun saveUserPreferences(userName: String, pass: String, tokenKey: String, userId: String){
+    fun saveUserPreferences(onBoardStatus: Boolean, userName: String, tokenKey: String, userId: String){
         viewModelScope.launch {
-            PreferenceRepository.savePreferences(userName, tokenKey, userId)
+            repository.saveUser(onBoardStatus, userName, tokenKey, userId)
         }
     }
 }

@@ -13,9 +13,16 @@ import kotlinx.coroutines.flow.map
 val Context.dataStore : DataStore<Preferences> by preferencesDataStore(name = "userPreferences")
 class AuthenticationPreference private constructor(private val dataStore: DataStore<Preferences>){
 
+    private val onBoardKey = booleanPreferencesKey("onBoard")
     private val nameKey = stringPreferencesKey("NameKey")
     private val tokenKey = stringPreferencesKey("UserToken")
     private val userIdKey = stringPreferencesKey("userId_key")
+
+    fun getOnBoardStatus(): Flow<Boolean> {
+        return dataStore.data.map { pref ->
+            pref[onBoardKey] ?: false
+        }
+    }
 
     fun getNameKey(): Flow<String>{
         return dataStore.data.map {
@@ -35,9 +42,10 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
         }
     }
 
-    suspend fun savePreferences(name : String, tokenId:String, userId : String){
+    suspend fun savePreferences(onBoard: Boolean, name : String, tokenId:String, userId : String){
         dataStore.edit {
             it[nameKey] = name
+            it[onBoardKey] = onBoard
             it[tokenKey] = tokenId
             it[userIdKey] = userId
         }

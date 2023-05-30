@@ -1,21 +1,23 @@
 package com.organeco.viewmodel
 
 import android.content.Context
-import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.organeco.di.Injection
-import com.organeco.model.local.preferences.repository.PreferenceRepository
+import com.organeco.model.remote.respository.ApiRepository
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
-    private val PreferenceRepository : PreferenceRepository
-): ViewModelProvider.Factory {
+    private val repository: ApiRepository
+): ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
+            modelClass.isAssignableFrom(AuthViewModel::class.java) -> {
+                AuthViewModel(repository) as T
+            }
             modelClass.isAssignableFrom(UserPreferencesVM::class.java) -> {
-                UserPreferencesVM(PreferenceRepository) as T
+                UserPreferencesVM(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
