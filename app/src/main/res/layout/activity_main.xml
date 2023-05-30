@@ -51,6 +51,7 @@
 
 
         <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/green_500"
             android:id="@+id/card_iot"
             android:layout_width="match_parent"
             android:layout_height="190dp"
@@ -61,8 +62,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/img_item_iot"
@@ -93,6 +93,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/green_500"
             android:id="@+id/card_calc"
             android:layout_width="match_parent"
             android:layout_height="190dp"
@@ -106,8 +107,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/img_item_calc"
