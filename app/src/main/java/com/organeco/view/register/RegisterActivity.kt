@@ -70,7 +70,7 @@ class RegisterActivity : AppCompatActivity() {
 
         if (!checkData()) {
             authViewModel.postRegister(name, email, password).observe(this) {
-                if ( password.length < 7) {
+                if ( password.length < 6) {
                     Toast.makeText(
                         this@RegisterActivity,
                         getString(R.string.password_error),

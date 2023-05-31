@@ -17,6 +17,7 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
     private val nameKey = stringPreferencesKey("NameKey")
     private val tokenKey = stringPreferencesKey("UserToken")
     private val userIdKey = stringPreferencesKey("userId_key")
+    private val emailKey = stringPreferencesKey("EmailKey")
 
     fun getOnBoardStatus(): Flow<Boolean> {
         return dataStore.data.map { pref ->
@@ -27,6 +28,12 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
     fun getNameKey(): Flow<String>{
         return dataStore.data.map {
             it[nameKey] ?: ""
+        }
+    }
+
+    fun getEmail(): Flow<String>{
+        return dataStore.data.map {
+            it[emailKey] ?: ""
         }
     }
 
