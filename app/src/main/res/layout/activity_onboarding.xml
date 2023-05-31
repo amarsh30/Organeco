@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/green_700"
     app:layoutDescription="@xml/activity_onboarding_scene"
-    tools:context=".view.OnboardingActivity">
+    tools:context=".view.start.OnboardingActivity">
 
     <ImageView
         android:id="@+id/ivPlant1"

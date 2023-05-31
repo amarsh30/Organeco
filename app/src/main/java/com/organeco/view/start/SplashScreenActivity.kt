@@ -1,4 +1,4 @@
-package com.organeco.view
+package com.organeco.view.start
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
 import com.organeco.databinding.ActivitySplashScreenBinding
+import com.organeco.view.MainActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 

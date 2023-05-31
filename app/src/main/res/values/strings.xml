@@ -20,4 +20,5 @@
     <string name="guest">Guest</string>
     <string name="Login_error">please check again</string>
     <string name="Login_form_error">Invalid form</string>
+    <string name="password_error">Pssword kurang dari 6 karakter</string>
 </resources>

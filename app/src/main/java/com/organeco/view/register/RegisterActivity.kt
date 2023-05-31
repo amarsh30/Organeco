@@ -1,4 +1,4 @@
-package com.organeco.view
+package com.organeco.view.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
 import com.organeco.databinding.ActivityRegisterBinding
 import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.view.login.LoginActivity
+import com.organeco.view.MainActivity
 import com.organeco.view.customview.PasswordCustom
 import com.organeco.viewmodel.AuthViewModel
 import com.organeco.viewmodel.UserPreferencesVM
@@ -20,8 +23,8 @@ import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val authViewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
-    private val viewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
+    private val viewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
+    private val authViewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
 
     private lateinit var binding : ActivityRegisterBinding
 
@@ -30,6 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
 
         setEditTextPassword()
 
@@ -65,23 +69,31 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding.etPassword.text.toString()
 
         if (!checkData()) {
-            viewModel.postRegister(name, email, password).observe(this) {
-                when(it) {
-                    is MediatorResult.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                    }
-
-                    is MediatorResult.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        showMessage(it.data.message + " Welcome")
-                        lifecycleScope.launch {
-                            loginRegister()
+            authViewModel.postRegister(name, email, password).observe(this) {
+                if ( password.length < 7) {
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        getString(R.string.password_error),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    when(it) {
+                        is MediatorResult.Loading -> {
+                            binding.progressBar.visibility = View.VISIBLE
                         }
-                    }
 
-                    is MediatorResult.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        showMessage(it.error + "try again")
+                        is MediatorResult.Success -> {
+                            binding.progressBar.visibility = View.GONE
+                            showMessage(it.data.message + " Welcome")
+                            lifecycleScope.launch {
+                                loginRegister()
+                            }
+                        }
+
+                        is MediatorResult.Error -> {
+                            binding.progressBar.visibility = View.GONE
+                            showMessage(it.error + "try again")
+                        }
                     }
                 }
             }
@@ -94,7 +106,7 @@ class RegisterActivity : AppCompatActivity() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
-        viewModel.postLogin(email, password).observe(this) {
+        authViewModel.postLogin(email, password).observe(this) {
             when(it) {
                 is MediatorResult.Loading ->{
                     binding.progressBar.visibility = View.VISIBLE
@@ -125,7 +137,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun saveUserLogin(userName: String, tokenKey: String, userId: String, onBoard : Boolean){
-        authViewModel.saveUserPreferences(
+        viewModel.saveUserPreferences(
             onBoard,
             userName,
             tokenKey,

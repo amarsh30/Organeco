@@ -1,22 +1,22 @@
-package com.organeco.view
+package com.organeco.view.start
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.organeco.R
-import com.organeco.databinding.ActivityStartedBinding
+import com.organeco.databinding.ActivityOnboardingBinding
+import com.organeco.view.register.RegisterActivity
 
-class StartedActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityStartedBinding
+class OnboardingActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityOnboardingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStartedBinding.inflate(layoutInflater)
+        binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.hide()
 
-        binding.btnStart.setOnClickListener {
+        binding.btnStarted.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
             finishAffinity()
         }

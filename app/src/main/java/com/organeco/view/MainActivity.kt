@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.organeco.R
 import com.organeco.databinding.ActivityMainBinding
+import com.organeco.view.login.LoginActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 

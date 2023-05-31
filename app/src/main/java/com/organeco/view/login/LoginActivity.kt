@@ -1,4 +1,4 @@
-package com.organeco.view
+package com.organeco.view.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,13 +6,16 @@ import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
 import com.organeco.databinding.ActivityLoginBinding
 import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.view.MainActivity
 import com.organeco.view.customview.PasswordCustom
+import com.organeco.view.register.RegisterActivity
 import com.organeco.view.utils.IdlingConfig
 import com.organeco.viewmodel.AuthViewModel
 import com.organeco.viewmodel.UserPreferencesVM
@@ -21,8 +24,8 @@ import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
-    private val authViewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
-    private val viewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
+    private val viewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
+    private val authViewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -64,14 +67,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun sessionChecker(){
-        authViewModel.getTokenKey().observe(this){ respon ->
+        viewModel.getTokenKey().observe(this){ respon ->
             if (respon.isNullOrEmpty()){
                 if (checkData())
                     showMessage(getString(R.string.Login_error))
                 else
                     lifecycleScope.launch{ login() }
             } else {
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finishAffinity()
             }
         }
@@ -81,38 +84,47 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.edEmail.text.toString()
         val password = binding.edPassword.text.toString()
 
-        viewModel.postLogin(email, password).observe(this){
-            when(it) {
-                is MediatorResult.Loading ->{
-                    binding.progressBar.visibility = View.VISIBLE
-                }
-                is MediatorResult.Success -> {
-                    binding.progressBar.visibility = View.GONE
-                    saveUserLogin(
-                        it.data.data.name,
-                        it.data.data.token,
-                        it.data.data.userId,
-                        onBoard = true,
-
-                    )
-                    showMessage("Welcome ${it.data.data.name}")
-                    pageSuccess()
-                }
-                is MediatorResult.Error ->{
-                    binding.progressBar.visibility = View.GONE
-                    if (it.error == invalid) {
-                        showMessage(getString(R.string.Login_form_error))
-                    } else {
-                        showMessage(it.error)
+        authViewModel.postLogin(email, password).observe(this){
+            if ( password.length < 7) {
+                Toast.makeText(
+                    this@LoginActivity,
+                    getString(R.string.password_error),
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                when(it) {
+                    is MediatorResult.Loading ->{
+                        binding.progressBar.visibility = View.VISIBLE
                     }
-                    Log.d(tag, it.error)
+                    is MediatorResult.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        saveUserLogin(
+                            it.data.data.name,
+                            it.data.data.token,
+                            it.data.data.userId,
+                            onBoard = true,
+
+                            )
+                        showMessage("Welcome ${it.data.data.name}")
+                        pageSuccess()
+                    }
+                    is MediatorResult.Error ->{
+                        binding.progressBar.visibility = View.GONE
+                        if (it.error == invalid) {
+                            showMessage(getString(R.string.Login_form_error))
+                        } else {
+                            showMessage(it.error)
+                        }
+                        Log.d(tag, it.error)
+                    }
                 }
             }
+
         }
     }
 
     private fun saveUserLogin(userName: String, tokenKey: String, userId: String, onBoard: Boolean){
-        authViewModel.saveUserPreferences(
+        viewModel.saveUserPreferences(
             onBoard,
             userName,
             "Bearer $tokenKey",
