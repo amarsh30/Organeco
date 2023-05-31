@@ -61,6 +61,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tv_tipeTanah"
+        style="@style/textH4Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:text="Tipe Tanah"/>
+
     <Spinner
         android:id="@+id/spinner_tipeTanah"
         android:layout_width="match_parent"
@@ -73,10 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
-        android:text="Ph Tanah"
-        app:layout_constraintEnd_toEndOf="@+id/tvLogin"
-        app:layout_constraintStart_toStartOf="@+id/tvLogin"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin"/>
+        android:text="Ph Tanah"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/temperature_text_input_layout"
