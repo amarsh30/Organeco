@@ -364,7 +364,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" />
         <Constraint
-            android:id="@+id/btnStarted"
+            android:id="@+id/btnGuest"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -374,6 +374,20 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="24dp"
             android:layout_marginStart="24dp" />
+        <Constraint
+            android:id="@+id/btnStarted"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toTopOf="@+id/menu2"
+            android:layout_marginEnd="24dp"
+            android:alpha="1"
+            android:layout_marginStart="24dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/descMenu4"
+            motion:layout_constraintVertical_bias="0.0"
+            motion:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="16dp" />
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/menu3"

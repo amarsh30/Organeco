@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
-        style="@style/textH1White"
+        style="@style/textH4White"
         app:layout_constraintEnd_toEndOf="@+id/logoMenu4"
         app:layout_constraintStart_toStartOf="@+id/logoMenu4"
         app:layout_constraintTop_toBottomOf="@+id/logoMenu4"
@@ -170,7 +170,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:srcCompat="@drawable/ic_circle_full_24"
+        app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -184,7 +184,7 @@
         app:layout_constraintStart_toEndOf="@+id/menu1"
         app:layout_constraintTop_toTopOf="@+id/menu1"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_circle_full_24"
+        app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -198,7 +198,7 @@
         app:layout_constraintStart_toEndOf="@+id/menu2"
         app:layout_constraintTop_toTopOf="@+id/menu2"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_circle_full_24"
+        app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -212,7 +212,7 @@
         app:layout_constraintStart_toEndOf="@+id/menu3"
         app:layout_constraintTop_toTopOf="@+id/menu3"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_circle_full_24"
+        app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
 
     <Button
@@ -223,7 +223,20 @@
         android:layout_marginEnd="24dp"
         android:alpha="0"
         android:backgroundTint="@color/green_500"
-        android:text="@string/learn_now"
+        android:text="@string/get_started"
+        app:layout_constraintBottom_toTopOf="@+id/menu2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuest"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:backgroundTint="@color/green_200"
+        android:text="@string/guest"
         app:layout_constraintBottom_toTopOf="@+id/menu2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
