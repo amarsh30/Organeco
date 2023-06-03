@@ -39,6 +39,11 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
+    }
+
     private fun logout(){
         prefViewModel.saveUserPreferences(
             true,
