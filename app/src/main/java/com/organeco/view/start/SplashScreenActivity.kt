@@ -9,6 +9,7 @@ import android.os.Looper
 import androidx.activity.viewModels
 import com.organeco.databinding.ActivitySplashScreenBinding
 import com.organeco.view.MainActivity
+import com.organeco.view.profile.ProfileActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -42,7 +43,7 @@ class  SplashScreenActivity : AppCompatActivity() {
                             startActivity(Intent(this@SplashScreenActivity, StartedActivity::class.java))
                             finishAffinity()
                         } else {
-                            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+                            startActivity(Intent(this@SplashScreenActivity, ProfileActivity ::class.java))
                             finishAffinity()
                         }
                     }

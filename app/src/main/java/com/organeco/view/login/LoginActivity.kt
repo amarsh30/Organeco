@@ -15,6 +15,7 @@ import com.organeco.databinding.ActivityLoginBinding
 import com.organeco.model.remote.utils.MediatorResult
 import com.organeco.view.MainActivity
 import com.organeco.view.customview.PasswordCustom
+import com.organeco.view.profile.ProfileActivity
 import com.organeco.view.register.RegisterActivity
 import com.organeco.view.utils.IdlingConfig
 import com.organeco.viewmodel.AuthViewModel
@@ -74,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                 else
                     lifecycleScope.launch{ login() }
             } else {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, ProfileActivity::class.java))
                 finishAffinity()
             }
         }
@@ -85,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.edPassword.text.toString()
 
         authViewModel.postLogin(email, password).observe(this){
-            if ( password.length < 7) {
+            if ( password.length < 6) {
                 Toast.makeText(
                     this@LoginActivity,
                     getString(R.string.password_error),
@@ -133,7 +134,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun pageSuccess(){
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, ProfileActivity::class.java))
         finishAffinity()
     }
 

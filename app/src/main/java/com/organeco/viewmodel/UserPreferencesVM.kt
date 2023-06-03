@@ -13,6 +13,7 @@ class UserPreferencesVM(private val repository: ApiRepository
     fun getTokenKey(): LiveData<String> = repository.getUserToken()
     fun getUserId(): LiveData<String> = repository.getIdUser()
     fun getOnBoardStatus(): LiveData<Boolean> = repository.getOnBoardStatus()
+    fun getEmail(): LiveData<String> = repository.getEmail()
 
     fun saveUserPreferences(onBoardStatus: Boolean, userName: String, tokenKey: String, userId: String){
         viewModelScope.launch {
