@@ -43,7 +43,7 @@ class  SplashScreenActivity : AppCompatActivity() {
                             startActivity(Intent(this@SplashScreenActivity, StartedActivity::class.java))
                             finishAffinity()
                         } else {
-                            startActivity(Intent(this@SplashScreenActivity, ProfileActivity ::class.java))
+                            startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
                             finishAffinity()
                         }
                     }

@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
                 else
                     lifecycleScope.launch{ login() }
             } else {
-                startActivity(Intent(this, ProfileActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finishAffinity()
             }
         }
@@ -134,7 +134,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun pageSuccess(){
-        startActivity(Intent(this, ProfileActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
         finishAffinity()
     }
 

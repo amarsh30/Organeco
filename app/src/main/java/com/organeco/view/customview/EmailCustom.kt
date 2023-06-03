@@ -25,12 +25,6 @@ class EmailCustom: AppCompatEditText, View.OnTouchListener {
         init()
     }
 
-//    override fun onDraw(canvas: Canvas) {
-//        super.onDraw(canvas)
-//        hint = "Email"
-//        textAlignment = View.TEXT_ALIGNMENT_VIEW_START
-//    }
-
     private fun init() {
         setOnTouchListener(this)
         addTextChangedListener(object : TextWatcher {

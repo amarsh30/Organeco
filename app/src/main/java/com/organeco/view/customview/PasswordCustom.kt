@@ -33,12 +33,6 @@ class PasswordCustom: AppCompatEditText, View.OnTouchListener {
         init()
     }
 
-//    override fun onDraw(canvas: Canvas) {
-//        super.onDraw(canvas)
-//        hint = "Password"
-//        textAlignment = View.TEXT_ALIGNMENT_VIEW_START
-//    }
-
     private fun init() {
         iconTextImage = ContextCompat.getDrawable(context,  R.drawable.ic_hidepass) as Drawable
         setOnTouchListener(this)
