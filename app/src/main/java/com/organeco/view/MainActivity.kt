@@ -18,19 +18,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonLogout.setOnClickListener {
-            logout()
-        }
-    }
-
-    private fun logout(){
-        prefViewModel.saveUserPreferences(
-            true,
-            "",
-            "",
-            "",
-        )
-        startActivity(Intent(this, LoginActivity::class.java))
-        finishAffinity()
     }
 }
