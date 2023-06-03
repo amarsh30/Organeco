@@ -11,6 +11,7 @@
         android:id="@+id/bg_home"
         android:layout_width="match_parent"
         android:layout_height="240dp"
+        android:layout_marginTop="-4dp"
         android:src="@drawable/home_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,15 +28,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_a" />
 
             <TextView
                 android:id="@+id/tv_hello"
                 style="@style/textH4White"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
                 android:text="Halo," />
 
             <TextView
@@ -44,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
                 android:text="Nama"
                 android:layout_weight="1"
                 />
@@ -53,7 +62,7 @@
                 android:padding="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
                 android:background="@color/green_500"
                 android:src="@drawable/baseline_bookmark_24" />
 
@@ -62,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
                 android:background="@color/green_500"
                 android:src="@drawable/baseline_person_24" />
 
@@ -101,8 +110,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="6dp"
                     android:text="TextView"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
+                    style="@style/textH1White"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/img_item_iot" />
@@ -146,8 +154,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="6dp"
                     android:text="TextView"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
+                    style="@style/textH1White"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/img_item_calc" />
