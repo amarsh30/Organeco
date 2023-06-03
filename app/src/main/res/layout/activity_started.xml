@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="@+id/titleMenu4"
         app:layout_constraintTop_toBottomOf="@+id/titleMenu4" />
 
-    <Button
+        <Button
         android:id="@+id/btnStart"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -65,19 +65,22 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/get_started"
+        android:background="@drawable/rounded_bg_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descMenu4" />
 
-    <Button
-        android:id="@+id/btnGues"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btbGues"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/guest"
-        android:backgroundTint="@color/green_200"
+        android:textColor="@color/gray_100"
+        android:background="@drawable/rounded_bg_button_sec"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnStart"
         app:layout_constraintStart_toStartOf="@+id/btnStart"
         app:layout_constraintTop_toBottomOf="@+id/btnStart" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,11 +29,6 @@ class ProfileActivity : AppCompatActivity() {
             binding.tvProfileName.text = name
         }
 
-        prefViewModel.getEmail().observe(this){ email ->
-            binding.tvProfileEmail.text = email
-            Log.d("TAG", "Email: $email")
-        }
-
         binding.btnLogout.setOnClickListener {
             logout()
         }

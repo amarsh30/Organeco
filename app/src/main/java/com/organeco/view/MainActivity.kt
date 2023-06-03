@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.organeco.databinding.ActivityMainBinding
 import com.organeco.view.login.LoginActivity
+import com.organeco.view.profile.ProfileActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -20,5 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        binding.imgBtnProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+            finish()
+        }
     }
 }

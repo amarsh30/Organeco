@@ -222,21 +222,26 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:alpha="0"
-        android:backgroundTint="@color/green_500"
+        style="@style/textH4White"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_bg_button"
         android:text="@string/get_started"
         app:layout_constraintBottom_toTopOf="@+id/menu2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGuest"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:alpha="0"
-        android:backgroundTint="@color/green_200"
+        style="@style/textH4White"
         android:text="@string/guest"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_bg_button_sec"
         app:layout_constraintBottom_toTopOf="@+id/menu2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

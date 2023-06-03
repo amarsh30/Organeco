@@ -21,9 +21,8 @@
     <string name="Login_error">please check again</string>
     <string name="Login_form_error">Invalid form</string>
     <string name="password_error">Pssword kurang dari 6 karakter</string>
-    <string name="logout">logout</string>
+    <string name="logout">Logout</string>
     <string name="profile">Profile</string>
-    <string name="learn_now">Get Started</string>
 
     <string name="selected_item">Selected item:</string>
     <string-array name="Jenis_tanah">

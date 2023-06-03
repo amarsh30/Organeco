@@ -43,7 +43,6 @@ class ApiRepository(
     fun getUserName(): LiveData<String> = preferences.getNameKey().asLiveData()
     fun getIdUser(): LiveData<String> = preferences.getUserId().asLiveData()
     fun getOnBoardStatus(): LiveData<Boolean> = preferences.getOnBoardStatus().asLiveData()
-    fun getEmail(): LiveData<String> = preferences.getEmail().asLiveData()
 
     suspend fun saveUser(onBoardStatus: Boolean, userName: String, tokenKey: String, userId: String){
         preferences.savePreferences(onBoardStatus, userName, tokenKey, userId)
