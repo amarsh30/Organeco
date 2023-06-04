@@ -30,5 +30,10 @@
         <item>tanah 2</item>
         <item>tanah 3</item>
     </string-array>
+    <string-array name="Jenis_Tanaman">
+        <item>tanaman 1</item>
+        <item>tanaman 2</item>
+        <item>tanaman 3</item>
+    </string-array>
     
 </resources>

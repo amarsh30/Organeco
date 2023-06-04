@@ -19,9 +19,9 @@ class CalculatorActivity : AppCompatActivity() {
         val tanah = resources.getStringArray(R.array.Jenis_tanah)
 
         val spinnerTanah = binding.spinnerTipeTanah
-        val adapter = ArrayAdapter(
+        val spinnerTanahAdapter = ArrayAdapter(
             this, android.R.layout.simple_spinner_item, tanah)
-        spinnerTanah.adapter = adapter
+        spinnerTanah.adapter = spinnerTanahAdapter
 
         spinnerTanah.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
@@ -34,5 +34,22 @@ class CalculatorActivity : AppCompatActivity() {
             }
         }
 
+        val tanaman = resources.getStringArray(R.array.Jenis_Tanaman)
+
+        val spinnerTanaman = binding.spinnerTipeTanaman
+        val spinnerTanamanAdapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_item, tanaman)
+        spinnerTanaman.adapter = spinnerTanamanAdapter
+
+        spinnerTanaman.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                Toast.makeText(this@CalculatorActivity,
+                    getString(R.string.selected_item) + " " + "" + tanaman[position], Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+        }
     }
 }

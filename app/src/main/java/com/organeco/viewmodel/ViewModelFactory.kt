@@ -19,6 +19,9 @@ class ViewModelFactory private constructor(
             modelClass.isAssignableFrom(UserPreferencesVM::class.java) -> {
                 UserPreferencesVM(repository) as T
             }
+            modelClass.isAssignableFrom(CalculatorViewModel::class.java) -> {
+                CalculatorViewModel(repository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }

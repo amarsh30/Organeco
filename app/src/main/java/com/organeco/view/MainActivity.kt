@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.organeco.CalculatorActivity
 import com.organeco.databinding.ActivityMainBinding
 import com.organeco.view.login.LoginActivity
 import com.organeco.view.profile.ProfileActivity
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding.imgBtnProfile.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
             finish()
+        }
+
+        binding.cardCalc.setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
         }
     }
 }
