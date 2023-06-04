@@ -52,4 +52,15 @@ class CalculatorActivity : AppCompatActivity() {
             }
         }
     }
+
+    private suspend fun calculate() {
+        val temperature = Integer.parseInt(binding.edTemperature.text.toString())
+        val humidity = Integer.parseInt(binding.edHumidity.text.toString())
+        val moisture = Integer.parseInt(binding.edMoisture.text.toString())
+//        val soilType = Integer.parseInt(binding.edTemperature.text.toString())
+//        val cropType = Integer.parseInt(binding.edTemperature.text.toString()) spinner beda
+        val nitrogen = Integer.parseInt(binding.edNitrogen.text.toString())
+        val potassium = Integer.parseInt(binding.edPotassium.text.toString())
+        val phosphorous = Integer.parseInt(binding.edPhosphorous.text.toString())
+    }
 }
