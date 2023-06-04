@@ -1,22 +1,21 @@
-package com.organeco.view.login
+package com.organeco.view.activity.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
 import com.organeco.databinding.ActivityLoginBinding
 import com.organeco.model.remote.utils.MediatorResult
-import com.organeco.view.MainActivity
+import com.organeco.view.activity.MainActivity
+import com.organeco.view.activity.register.RegisterActivity
 import com.organeco.view.customview.PasswordCustom
-import com.organeco.view.profile.ProfileActivity
-import com.organeco.view.register.RegisterActivity
 import com.organeco.view.utils.IdlingConfig
 import com.organeco.viewmodel.AuthViewModel
 import com.organeco.viewmodel.UserPreferencesVM
@@ -25,8 +24,8 @@ import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
-    private val viewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
-    private val authViewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
+    private val viewModel: UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
+    private val authViewModel: AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -49,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkData(): Boolean{
+    private fun checkData(): Boolean {
         val email = binding.edEmail.text.toString().trim()
         val password = binding.edPassword.text.toString()
 
@@ -67,13 +66,13 @@ class LoginActivity : AppCompatActivity() {
         return false
     }
 
-    private fun sessionChecker(){
-        viewModel.getTokenKey().observe(this){ respon ->
-            if (respon.isNullOrEmpty()){
+    private fun sessionChecker() {
+        viewModel.getTokenKey().observe(this) { respon ->
+            if (respon.isNullOrEmpty()) {
                 if (checkData())
                     showMessage(getString(R.string.Login_error))
                 else
-                    lifecycleScope.launch{ login() }
+                    lifecycleScope.launch { login() }
             } else {
                 startActivity(Intent(this, MainActivity::class.java))
                 finishAffinity()
@@ -85,16 +84,16 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.edEmail.text.toString()
         val password = binding.edPassword.text.toString()
 
-        authViewModel.postLogin(email, password).observe(this){
-            if ( password.length < 6) {
+        authViewModel.postLogin(email, password).observe(this) {
+            if (password.length < 6) {
                 Toast.makeText(
                     this@LoginActivity,
                     getString(R.string.password_error),
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                when(it) {
-                    is MediatorResult.Loading ->{
+                when (it) {
+                    is MediatorResult.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
                     }
                     is MediatorResult.Success -> {
@@ -109,7 +108,7 @@ class LoginActivity : AppCompatActivity() {
                         showMessage("Welcome ${it.data.data.name}")
                         pageSuccess()
                     }
-                    is MediatorResult.Error ->{
+                    is MediatorResult.Error -> {
                         binding.progressBar.visibility = View.GONE
                         if (it.error == invalid) {
                             showMessage(getString(R.string.Login_form_error))
@@ -124,7 +123,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserLogin(userName: String, tokenKey: String, userId: String, onBoard: Boolean){
+    private fun saveUserLogin(
+        userName: String,
+        tokenKey: String,
+        userId: String,
+        onBoard: Boolean
+    ) {
         viewModel.saveUserPreferences(
             onBoard,
             userName,
@@ -133,12 +137,12 @@ class LoginActivity : AppCompatActivity() {
         )
     }
 
-    private fun pageSuccess(){
+    private fun pageSuccess() {
         startActivity(Intent(this, MainActivity::class.java))
         finishAffinity()
     }
 
-    private fun showMessage(message : String){
+    private fun showMessage(message: String) {
         Snackbar.make(
             binding.root,
             message,
@@ -146,13 +150,14 @@ class LoginActivity : AppCompatActivity() {
         ).show()
     }
 
-    private fun setEditTextPassword(){
+    private fun setEditTextPassword() {
         binding.edPassword.apply {
             transformationMethod = PasswordTransformationMethod.getInstance()
             onItemClickDetail(object : PasswordCustom.SetHideCallBack {
                 override fun setHideCallback(status: Boolean) {
                     if (status) {
-                        binding.edPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                        binding.edPassword.transformationMethod =
+                            PasswordTransformationMethod.getInstance()
                     } else {
                         binding.edPassword.transformationMethod = null
                     }
@@ -161,7 +166,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    companion object{
+    companion object {
         const val tag = "LoginActivity"
         const val invalid = "HTTP 400 Bad Request"
     }

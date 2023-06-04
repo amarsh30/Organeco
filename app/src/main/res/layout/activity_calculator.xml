@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalculatorActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.activity.calculator.CalculatorActivity">
 
     <TextView
         android:id="@+id/tvPh"
         style="@style/textH4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:text="Ph Tanah"
         app:layout_constraintEnd_toEndOf="@+id/tvLogin"
         app:layout_constraintStart_toStartOf="@+id/tvLogin"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ph_text_input_layout"
@@ -39,12 +39,12 @@
         style="@style/textH4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:text="Kelembapan"
         app:layout_constraintEnd_toEndOf="@+id/tvLogin"
         app:layout_constraintStart_toStartOf="@+id/tvLogin"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/kelembapan_text_input_layout"
@@ -66,9 +66,9 @@
         style="@style/textH4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
-        android:text="Tipe Tanah"/>
+        android:layout_marginTop="32dp"
+        android:text="Tipe Tanah" />
 
     <Spinner
         android:id="@+id/spinner_tipeTanah"
@@ -80,9 +80,9 @@
         style="@style/textH4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="8dp"
-        android:text="Ph Tanah"/>
+        android:layout_marginTop="32dp"
+        android:text="Ph Tanah" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/temperature_text_input_layout"

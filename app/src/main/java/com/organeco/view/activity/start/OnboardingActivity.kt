@@ -1,10 +1,10 @@
-package com.organeco.view.start
+package com.organeco.view.activity.start
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityOnboardingBinding
-import com.organeco.view.register.RegisterActivity
+import com.organeco.view.activity.register.RegisterActivity
 
 class OnboardingActivity : AppCompatActivity() {
 

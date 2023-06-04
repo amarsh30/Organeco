@@ -9,7 +9,7 @@ import com.organeco.model.remote.respository.ApiRepository
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
     private val repository: ApiRepository
-): ViewModelProvider.NewInstanceFactory() {
+) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
@@ -23,9 +23,9 @@ class ViewModelFactory private constructor(
         }
     }
 
-    companion object{
+    companion object {
         @Volatile
-        private var instance : ViewModelFactory? = null
+        private var instance: ViewModelFactory? = null
         fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(

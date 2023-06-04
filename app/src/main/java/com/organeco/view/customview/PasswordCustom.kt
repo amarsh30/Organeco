@@ -1,7 +1,6 @@
 package com.organeco.view.customview
 
 import android.content.Context
-import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,11 +11,11 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.organeco.R
 
-class PasswordCustom: AppCompatEditText, View.OnTouchListener {
+class PasswordCustom : AppCompatEditText, View.OnTouchListener {
     private lateinit var iconTextImage: Drawable
-    private lateinit var onItemHide : SetHideCallBack
+    private lateinit var onItemHide: SetHideCallBack
 
-    fun onItemClickDetail(onItemHide : SetHideCallBack){
+    fun onItemClickDetail(onItemHide: SetHideCallBack) {
         this.onItemHide = onItemHide
     }
 
@@ -29,12 +28,16 @@ class PasswordCustom: AppCompatEditText, View.OnTouchListener {
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init()
     }
 
     private fun init() {
-        iconTextImage = ContextCompat.getDrawable(context,  R.drawable.ic_hidepass) as Drawable
+        iconTextImage = ContextCompat.getDrawable(context, R.drawable.ic_hidepass) as Drawable
         setOnTouchListener(this)
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -56,17 +59,30 @@ class PasswordCustom: AppCompatEditText, View.OnTouchListener {
     private fun showEditIcon() {
         setButtonDrawables(
             endOfTheText = iconTextImage,
-            startOfTheText = ContextCompat.getDrawable(context, R.drawable.ic_baseline_lock_24) as Drawable
+            startOfTheText = ContextCompat.getDrawable(
+                context,
+                R.drawable.ic_baseline_lock_24
+            ) as Drawable
         )
     }
 
-    private fun warnText(){
+    private fun warnText() {
         error = invalid_pass
-        iconTextImage = ContextCompat.getDrawable(context,  R.drawable.ic_hidepass) as Drawable
+        iconTextImage = ContextCompat.getDrawable(context, R.drawable.ic_hidepass) as Drawable
     }
 
-    private fun setButtonDrawables(startOfTheText: Drawable? = null, topOfTheText:Drawable? = null, endOfTheText:Drawable? = null, bottomOfTheText: Drawable? = null){
-        setCompoundDrawablesWithIntrinsicBounds(startOfTheText, topOfTheText, endOfTheText, bottomOfTheText)
+    private fun setButtonDrawables(
+        startOfTheText: Drawable? = null,
+        topOfTheText: Drawable? = null,
+        endOfTheText: Drawable? = null,
+        bottomOfTheText: Drawable? = null
+    ) {
+        setCompoundDrawablesWithIntrinsicBounds(
+            startOfTheText,
+            topOfTheText,
+            endOfTheText,
+            bottomOfTheText
+        )
     }
 
     override fun onTouch(v: View?, event: MotionEvent): Boolean {
@@ -89,14 +105,16 @@ class PasswordCustom: AppCompatEditText, View.OnTouchListener {
             if (isClearButtonClicked) {
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        iconTextImage = ContextCompat.getDrawable(context,
+                        iconTextImage = ContextCompat.getDrawable(
+                            context,
                             R.drawable.ic_showpass
                         ) as Drawable
                         onItemHide.setHideCallback(false)
                         return true
                     }
                     MotionEvent.ACTION_UP -> {
-                        iconTextImage = ContextCompat.getDrawable(context,R.drawable.ic_hidepass) as Drawable
+                        iconTextImage =
+                            ContextCompat.getDrawable(context, R.drawable.ic_hidepass) as Drawable
                         onItemHide.setHideCallback(true)
 
                         return true
@@ -109,11 +127,11 @@ class PasswordCustom: AppCompatEditText, View.OnTouchListener {
     }
 
 
-    interface SetHideCallBack{
-        fun setHideCallback(status : Boolean)
+    interface SetHideCallBack {
+        fun setHideCallback(status: Boolean)
     }
 
-    companion object{
+    companion object {
         const val invalid_pass = "password must 6 char"
     }
 

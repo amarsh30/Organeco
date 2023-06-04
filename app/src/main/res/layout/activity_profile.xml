@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.profile.ProfileActivity">
+    tools:context=".view.activity.profile.ProfileActivity">
 
     <View
         android:id="@+id/view2"
@@ -35,7 +35,7 @@
         android:text="@string/name"
         app:layout_constraintBottom_toBottomOf="@+id/ivProfile"
         app:layout_constraintStart_toEndOf="@+id/ivProfile"
-        app:layout_constraintTop_toTopOf="@+id/ivProfile"/>
+        app:layout_constraintTop_toTopOf="@+id/ivProfile" />
 
     <Button
         android:id="@+id/btnLogout"

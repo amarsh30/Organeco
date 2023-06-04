@@ -1,20 +1,20 @@
-package com.organeco.view.register
+package com.organeco.view.activity.register
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
 import com.organeco.databinding.ActivityRegisterBinding
 import com.organeco.model.remote.utils.MediatorResult
-import com.organeco.view.login.LoginActivity
-import com.organeco.view.MainActivity
+import com.organeco.view.activity.MainActivity
+import com.organeco.view.activity.login.LoginActivity
 import com.organeco.view.customview.PasswordCustom
 import com.organeco.viewmodel.AuthViewModel
 import com.organeco.viewmodel.UserPreferencesVM
@@ -23,10 +23,10 @@ import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val viewModel : UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
-    private val authViewModel : AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
+    private val viewModel: UserPreferencesVM by viewModels { ViewModelFactory.getInstance(this) }
+    private val authViewModel: AuthViewModel by viewModels { ViewModelFactory.getInstance(this) }
 
-    private lateinit var binding : ActivityRegisterBinding
+    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,21 +63,21 @@ class RegisterActivity : AppCompatActivity() {
         return false
     }
 
-    private suspend fun register(){
+    private suspend fun register() {
         val name = binding.edName.text.toString()
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
         if (!checkData()) {
             authViewModel.postRegister(name, email, password).observe(this) {
-                if ( password.length < 6) {
+                if (password.length < 6) {
                     Toast.makeText(
                         this@RegisterActivity,
                         getString(R.string.password_error),
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    when(it) {
+                    when (it) {
                         is MediatorResult.Loading -> {
                             binding.progressBar.visibility = View.VISIBLE
                         }
@@ -107,8 +107,8 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding.etPassword.text.toString()
 
         authViewModel.postLogin(email, password).observe(this) {
-            when(it) {
-                is MediatorResult.Loading ->{
+            when (it) {
+                is MediatorResult.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 is MediatorResult.Success -> {
@@ -136,7 +136,12 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserLogin(userName: String, tokenKey: String, userId: String, onBoard : Boolean){
+    private fun saveUserLogin(
+        userName: String,
+        tokenKey: String,
+        userId: String,
+        onBoard: Boolean
+    ) {
         viewModel.saveUserPreferences(
             onBoard,
             userName,
@@ -145,12 +150,13 @@ class RegisterActivity : AppCompatActivity() {
         )
     }
 
-    private fun setEditTextPassword(){
+    private fun setEditTextPassword() {
         binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
         binding.etPassword.onItemClickDetail(object : PasswordCustom.SetHideCallBack {
             override fun setHideCallback(status: Boolean) {
                 if (status) {
-                    binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.etPassword.transformationMethod =
+                        PasswordTransformationMethod.getInstance()
                 } else {
                     binding.etPassword.transformationMethod = null
                 }
@@ -158,7 +164,7 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-    private fun showMessage(message : String){
+    private fun showMessage(message: String) {
         Snackbar.make(
             binding.root,
             message,
@@ -166,7 +172,7 @@ class RegisterActivity : AppCompatActivity() {
         ).show()
     }
 
-    companion object{
+    companion object {
         const val invalid = "HTTP 400 Bad Request try again"
     }
 }

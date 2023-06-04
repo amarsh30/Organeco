@@ -12,22 +12,29 @@ import com.organeco.view.utils.wrapperIdling
 
 class ApiRepository(
     private val apiService: ApiService,
-    private val preferences : AuthenticationPreference
+    private val preferences: AuthenticationPreference
 ) {
 
-    suspend fun postLogin(email : String, password : String): LiveData<MediatorResult<LoginResponse>> = wrapperIdling {
+    suspend fun postLogin(
+        email: String,
+        password: String
+    ): LiveData<MediatorResult<LoginResponse>> = wrapperIdling {
         liveData {
             emit(MediatorResult.Loading)
             try {
                 val respon = apiService.postLogin(email, password)
                 emit(MediatorResult.Success(respon))
-            } catch (e : Exception) {
+            } catch (e: Exception) {
                 emit(MediatorResult.Error(e.message.toString()))
             }
         }
     }
 
-    suspend fun postRegister(name: String, email: String, password: String): LiveData<MediatorResult<RegisterResponse>> = wrapperIdling {
+    suspend fun postRegister(
+        name: String,
+        email: String,
+        password: String
+    ): LiveData<MediatorResult<RegisterResponse>> = wrapperIdling {
         liveData {
             emit(MediatorResult.Loading)
             try {
@@ -44,7 +51,12 @@ class ApiRepository(
     fun getIdUser(): LiveData<String> = preferences.getUserId().asLiveData()
     fun getOnBoardStatus(): LiveData<Boolean> = preferences.getOnBoardStatus().asLiveData()
 
-    suspend fun saveUser(onBoardStatus: Boolean, userName: String, tokenKey: String, userId: String){
+    suspend fun saveUser(
+        onBoardStatus: Boolean,
+        userName: String,
+        tokenKey: String,
+        userId: String
+    ) {
         preferences.savePreferences(onBoardStatus, userName, tokenKey, userId)
     }
 }

@@ -1,11 +1,11 @@
-package com.organeco.view.start
+package com.organeco.view.activity.start
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityStartedBinding
-import com.organeco.view.login.LoginActivity
-import com.organeco.view.register.RegisterActivity
+import com.organeco.view.activity.login.LoginActivity
+import com.organeco.view.activity.register.RegisterActivity
 
 class StartedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartedBinding

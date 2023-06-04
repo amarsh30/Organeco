@@ -10,8 +10,9 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-val Context.dataStore : DataStore<Preferences> by preferencesDataStore(name = "userPreferences")
-class AuthenticationPreference private constructor(private val dataStore: DataStore<Preferences>){
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "userPreferences")
+
+class AuthenticationPreference private constructor(private val dataStore: DataStore<Preferences>) {
 
     private val onBoardKey = booleanPreferencesKey("onBoard")
     private val nameKey = stringPreferencesKey("NameKey")
@@ -24,25 +25,25 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
         }
     }
 
-    fun getNameKey(): Flow<String>{
+    fun getNameKey(): Flow<String> {
         return dataStore.data.map {
             it[nameKey] ?: ""
         }
     }
 
-    fun getTokenKey(): Flow<String>{
+    fun getTokenKey(): Flow<String> {
         return dataStore.data.map {
             it[tokenKey] ?: ""
         }
     }
 
-    fun getUserId(): Flow<String>{
+    fun getUserId(): Flow<String> {
         return dataStore.data.map {
             it[userIdKey] ?: ""
         }
     }
 
-    suspend fun savePreferences(onBoard: Boolean, name : String, tokenId:String, userId : String){
+    suspend fun savePreferences(onBoard: Boolean, name: String, tokenId: String, userId: String) {
         dataStore.edit {
             it[nameKey] = name
             it[onBoardKey] = onBoard
@@ -51,12 +52,12 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
         }
     }
 
-    companion object{
+    companion object {
         @Volatile
         private var INSTANCE: AuthenticationPreference? = null
 
-        fun getInstance(dataStore: DataStore<Preferences>):AuthenticationPreference{
-            return INSTANCE ?: synchronized(this){
+        fun getInstance(dataStore: DataStore<Preferences>): AuthenticationPreference {
+            return INSTANCE ?: synchronized(this) {
                 val instance = AuthenticationPreference(dataStore)
                 INSTANCE = instance
                 instance
