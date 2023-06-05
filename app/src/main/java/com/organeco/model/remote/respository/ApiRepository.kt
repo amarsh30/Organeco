@@ -40,7 +40,7 @@ class ApiRepository(
         }
     }
 
-    suspend fun postCalculator(temperature: Number, humidity: Number, moisture : Number, soil_type: Number, crop_type: Number, nitrogen: Number, potassium: Number, phosphorous: Number): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
+     fun postCalculator(temperature: Number, humidity: Number, moisture : Number, soil_type: Number, crop_type: Number, nitrogen: Number, potassium: Number, phosphorous: Number): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
         liveData {
             emit(MediatorResult.Loading)
             try {
