@@ -8,7 +8,8 @@ import com.organeco.model.remote.respository.ApiRepository
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
-    private val repository: ApiRepository
+    private val repository: ApiRepository,
+    private val repositoryMl: ApiRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -20,7 +21,7 @@ class ViewModelFactory private constructor(
                 UserPreferencesVM(repository) as T
             }
             modelClass.isAssignableFrom(CalculatorViewModel::class.java) -> {
-                CalculatorViewModel(repository) as T
+                CalculatorViewModel(repositoryMl) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
@@ -32,7 +33,8 @@ class ViewModelFactory private constructor(
         fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(
-                    Injection.provideRepository(context)
+                    Injection.provideRepository(context),
+                    Injection.provideRepositoryMl(context),
                 )
             }.also { instance = it }
     }

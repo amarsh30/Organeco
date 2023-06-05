@@ -1,4 +1,4 @@
-package com.organeco
+package com.organeco.view.activity.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.organeco.R
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
 import com.organeco.viewmodel.CalculatorViewModel

@@ -25,21 +25,18 @@
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
     <string name="calculator">Calculator Pupuk</string>
-
-
-    <string name="selected_item">Selected item:</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="calculator_fertilizer">Kalkulator Pupuk</string>
     <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
+    <string name="selected_item">Selected item:</string>
     <string-array name="Jenis_tanah">
         <item>tanah 1</item>
         <item>tanah 2</item>
         <item>tanah 3</item>
+    </string-array>
+    <string-array name="Jenis_Tanaman">
+        <item>tanaman 1</item>
+        <item>tanaman 2</item>
+        <item>tanaman 3</item>
     </string-array>
 
 </resources>
