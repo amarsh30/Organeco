@@ -1,4 +1,4 @@
-package com.organeco.view.activity.login
+package com.organeco.view.activity.auth.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,7 +14,7 @@ import com.organeco.R
 import com.organeco.databinding.ActivityLoginBinding
 import com.organeco.model.remote.utils.MediatorResult
 import com.organeco.view.activity.MainActivity
-import com.organeco.view.activity.register.RegisterActivity
+import com.organeco.view.activity.auth.register.RegisterActivity
 import com.organeco.view.customview.PasswordCustom
 import com.organeco.view.utils.IdlingConfig
 import com.organeco.viewmodel.AuthViewModel

@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.R
 import com.organeco.databinding.ActivityProfileBinding
-import com.organeco.view.activity.login.LoginActivity
+import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityOnboardingBinding
-import com.organeco.view.activity.register.RegisterActivity
+import com.organeco.view.activity.auth.register.RegisterActivity
 
 class OnboardingActivity : AppCompatActivity() {
 

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.organeco.databinding.FragmentProfileBinding
-import com.organeco.view.activity.login.LoginActivity
+import com.organeco.model.local.DummyAdapter
+import com.organeco.model.local.fertilizer.DataDummySource
+import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 

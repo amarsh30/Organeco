@@ -8,13 +8,17 @@ import android.view.ViewGroup
 import android.widget.ScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.organeco.databinding.FragmentHomeBinding
+import com.organeco.model.local.DummyAdapter
+import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var dummyAdapter: DummyAdapter
     private val prefViewModel: UserPreferencesVM by viewModels {
         ViewModelFactory.getInstance(
             requireContext()
@@ -27,7 +31,9 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         binding.mainHomeLayout.fullScroll(ScrollView.FOCUS_UP)
-
+        dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
+        binding.rvFertilizer.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvFertilizer.adapter = dummyAdapter
         // intent ke fragment
 //        binding.cardIot.setOnClickListener {
 //            val navController = findNavController()
