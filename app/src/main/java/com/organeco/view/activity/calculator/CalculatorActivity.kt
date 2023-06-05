@@ -1,46 +1,43 @@
-package com.organeco.view.activity.calculator
+package com.organeco
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.organeco.R
+import androidx.activity.viewModels
 import com.organeco.databinding.ActivityCalculatorBinding
+import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.viewmodel.CalculatorViewModel
+import com.organeco.viewmodel.ViewModelFactory
 
 class CalculatorActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCalculatorBinding
+    private lateinit var binding : ActivityCalculatorBinding
+
+    private val calculatorViewModel : CalculatorViewModel by viewModels { ViewModelFactory.getInstance(this) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val callback = supportActionBar
-        callback?.title = getString(R.string.calculator)
-        callback?.setDisplayHomeAsUpEnabled(true)
-
-        val tanah = resources.getStringArray(R.array.Jenis_tanah)
+        val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
+        val tanahValue = listOf(1, 2, 3)
+        lateinit var tanahSelectedValue : Number
 
         val spinnerTanah = binding.spinnerTipeTanah
-        val adapter = ArrayAdapter(
-            this, android.R.layout.simple_spinner_item, tanah
-        )
-        spinnerTanah.adapter = adapter
+        val spinnerTanahAdapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_item, tanahDisplay)
+        spinnerTanah.adapter = spinnerTanahAdapter
 
         spinnerTanah.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                Toast.makeText(
-                    this@CalculatorActivity,
-                    getString(R.string.selected_item) + " " + "" + tanah[position],
-                    Toast.LENGTH_SHORT
-                ).show()
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                tanahSelectedValue = tanahValue[position]
+
+                Toast.makeText(this@CalculatorActivity,
+                getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue, Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -48,10 +45,56 @@ class CalculatorActivity : AppCompatActivity() {
             }
         }
 
+        val tanamanDisplay = resources.getStringArray(R.array.Jenis_Tanaman)
+        val tanamanValue = listOf(1, 2, 3)
+        lateinit var tanamanSelectedValue : Number
+
+        val spinnerTanaman = binding.spinnerTipeTanaman
+        val spinnerTanamanAdapter = ArrayAdapter(
+            this, android.R.layout.simple_spinner_item, tanamanDisplay)
+        spinnerTanaman.adapter = spinnerTanamanAdapter
+
+        spinnerTanaman.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                tanamanSelectedValue = tanamanValue[position]
+
+                Toast.makeText(this@CalculatorActivity,
+                    getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue, Toast.LENGTH_LONG).show()
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+        }
+
+        binding.btnCalculate.setOnClickListener{
+            calculate(tanahSelectedValue, tanamanSelectedValue)
+        }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
+    private fun calculate(tipeTanah : Number ,tipeTanaman : Number) {
+        val temperature = Integer.parseInt(binding.edTemperature.text.toString())
+        val humidity = Integer.parseInt(binding.edHumidity.text.toString())
+        val moisture = Integer.parseInt(binding.edMoisture.text.toString())
+        val soilType = tipeTanah
+        val cropType = tipeTanaman
+        val nitrogen = Integer.parseInt(binding.edNitrogen.text.toString())
+        val potassium = Integer.parseInt(binding.edPotassium.text.toString())
+        val phosphorous = Integer.parseInt(binding.edPhosphorous.text.toString())
+
+        calculatorViewModel.postCalculate(temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous).observe(this){
+        when(it) {
+            is MediatorResult.Loading -> {
+                // TODO: Loading visible
+            }
+            is MediatorResult.Success -> {
+                // TODO: loading invisible
+            }
+            else -> {
+                // TODO: error handling
+            }
+        }
+        }
+
     }
 }

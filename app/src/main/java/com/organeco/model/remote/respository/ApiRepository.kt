@@ -5,6 +5,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import com.organeco.model.local.preferences.AuthenticationPreference
 import com.organeco.model.remote.ApiService
+import com.organeco.model.remote.response.CalculatorResponse
 import com.organeco.model.remote.response.LoginResponse
 import com.organeco.model.remote.response.RegisterResponse
 import com.organeco.model.remote.utils.MediatorResult
@@ -39,6 +40,18 @@ class ApiRepository(
             emit(MediatorResult.Loading)
             try {
                 val respon = apiService.postRegister(name, email, password)
+                emit(MediatorResult.Success(respon))
+            } catch (e: Exception) {
+                emit(MediatorResult.Error(e.message.toString()))
+            }
+        }
+    }
+
+     fun postCalculator(temperature: Number, humidity: Number, moisture : Number, soil_type: Number, crop_type: Number, nitrogen: Number, potassium: Number, phosphorous: Number): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
+        liveData {
+            emit(MediatorResult.Loading)
+            try {
+                val respon = apiService.postCalculator(temperature, humidity, moisture, soil_type, crop_type, nitrogen, potassium, phosphorous)
                 emit(MediatorResult.Success(respon))
             } catch (e: Exception) {
                 emit(MediatorResult.Error(e.message.toString()))

@@ -1,5 +1,6 @@
 package com.organeco.model.remote
 
+import com.organeco.model.remote.response.CalculatorResponse
 import com.organeco.model.remote.response.LoginResponse
 import com.organeco.model.remote.response.RegisterResponse
 import retrofit2.http.Field
@@ -22,4 +23,17 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String,
     ): RegisterResponse
+
+    @FormUrlEncoded
+    @POST("predict")
+    suspend fun postCalculator(
+        @Field("temperatire") temperature : Number,
+        @Field("humidity") humidity : Number,
+        @Field("moisture") moisture : Number,
+        @Field("soil_type") soil_type : Number,
+        @Field("crop_type") crop_type : Number,
+        @Field("nitrogen") nitrogen : Number,
+        @Field("potassium") potassium : Number,
+        @Field("phosphorous") phosphorous : Number
+    ): CalculatorResponse
 }
