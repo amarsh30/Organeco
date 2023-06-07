@@ -8,4 +8,10 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
     }
+
+    companion object {
+        const val EXTRA_RESULT = "key_result"
+        const val EXTRA_INPUT = "key_input"
+    }
+
 }

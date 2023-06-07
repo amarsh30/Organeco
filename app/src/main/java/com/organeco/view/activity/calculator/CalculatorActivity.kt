@@ -1,15 +1,19 @@
 package com.organeco.view.activity.calculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.organeco.R
+import com.organeco.ResultActivity
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.viewmodel.CalculatorViewModel
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -71,6 +75,8 @@ class CalculatorActivity : AppCompatActivity() {
         binding.btnCalculate.setOnClickListener{
             calculate(tanahSelectedValue, tanamanSelectedValue)
         }
+
+
     }
 
     private fun calculate(tipeTanah : Number ,tipeTanaman : Number) {
@@ -86,13 +92,16 @@ class CalculatorActivity : AppCompatActivity() {
         calculatorViewModel.postCalculate(temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous).observe(this){
         when(it) {
             is MediatorResult.Loading -> {
-                // TODO: Loading visible
+                binding.progressBar.visibility = View.VISIBLE
             }
             is MediatorResult.Success -> {
-                // TODO: loading invisible
+                binding.progressBar.visibility = View.GONE
+                val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
+                intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.prediction)
             }
             else -> {
-                // TODO: error handling
+                binding.progressBar.visibility = View.GONE
+                //TODO: Error messagenya
             }
         }
         }
