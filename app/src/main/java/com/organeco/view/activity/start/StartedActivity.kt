@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityStartedBinding
-import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.view.activity.auth.register.RegisterActivity
+import com.organeco.view.activity.guest.GuestActivity
 
 class StartedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartedBinding
@@ -23,7 +23,7 @@ class StartedActivity : AppCompatActivity() {
         }
 
         binding.btbGues.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, GuestActivity::class.java))
             finishAffinity()
         }
     }

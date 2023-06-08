@@ -75,20 +75,20 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_description"
         app:layout_constraintVertical_bias="0.015" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_bookmark"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_margin="24dp"-->
-<!--        android:layout_marginBottom="32dp"-->
-<!--        android:contentDescription="bookmark"-->
-<!--        android:visibility="visible"-->
-<!--        app:borderWidth="3dp"-->
-<!--        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/ic_bookmark_white" />-->
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab_bookmark"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="24dp"-->
+    <!--        android:layout_marginBottom="32dp"-->
+    <!--        android:contentDescription="bookmark"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:borderWidth="3dp"-->
+    <!--        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_bookmark_white" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

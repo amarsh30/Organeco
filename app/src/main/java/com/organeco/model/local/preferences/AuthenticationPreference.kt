@@ -50,7 +50,13 @@ class AuthenticationPreference private constructor(private val dataStore: DataSt
         }
     }
 
-    suspend fun savePreferences(onBoard: Boolean, name: String, email: String, tokenId: String, userId: String) {
+    suspend fun savePreferences(
+        onBoard: Boolean,
+        name: String,
+        email: String,
+        tokenId: String,
+        userId: String
+    ) {
         dataStore.edit {
             it[nameKey] = name
             it[emailKey] = email

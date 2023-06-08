@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityOnboardingBinding
 import com.organeco.view.activity.auth.register.RegisterActivity
+import com.organeco.view.activity.guest.GuestActivity
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -18,6 +19,11 @@ class OnboardingActivity : AppCompatActivity() {
 
         binding.btnStarted.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            finishAffinity()
+        }
+
+        binding.btnGuest.setOnClickListener {
+            startActivity(Intent(this, GuestActivity::class.java))
             finishAffinity()
         }
     }

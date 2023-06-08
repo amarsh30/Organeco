@@ -5,12 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.organeco.databinding.FragmentBookmarkBinding
-import com.organeco.model.local.DummyAdapter
-import com.organeco.viewmodel.ViewModelFactory
 
 class BookmarkFragment : Fragment() {
 

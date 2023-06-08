@@ -1,67 +1,55 @@
-package com.organeco.view.fragment.home
+package com.organeco.view.activity.guest
 
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.organeco.R
-import com.organeco.databinding.FragmentHomeBinding
+import com.organeco.databinding.ActivityGuestBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
-import com.organeco.view.activity.calculator.CalculatorActivity
+import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
-import com.organeco.viewmodel.UserPreferencesVM
-import com.organeco.viewmodel.ViewModelFactory
 import kotlin.math.abs
 import kotlin.math.min
 
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
-
+class GuestActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityGuestBinding
     private lateinit var dummyAdapter: DummyAdapter
     private lateinit var adapterSlider: ImageSliderAdapter
     private val list = ArrayList<ImageData>()
     private lateinit var dots: ArrayList<TextView>
 
-    private val prefViewModel: UserPreferencesVM by viewModels {
-        ViewModelFactory.getInstance(
-            requireContext()
-        )
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityGuestBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHomeBinding.inflate(layoutInflater)
-        binding.mainHomeLayout.fullScroll(ScrollView.FOCUS_UP)
         dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
-        binding.rvFertilizer.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvFertilizer.layoutManager = LinearLayoutManager(this)
         binding.rvFertilizer.adapter = dummyAdapter
 
-        prefViewModel.getUserName().observe(viewLifecycleOwner) {
-            binding.tvNameHome.text = it
-        }
-
-        // intent ke activity
         binding.cardCalculator.setOnClickListener {
-            startActivity(Intent(requireContext(), CalculatorActivity::class.java))
+            AlertDialog.Builder(this).apply {
+                setTitle("Wah!")
+                setMessage("Kamu Harus Login Terlebih dahulu")
+                setPositiveButton("Login Dulu Yuk") { _, _ ->
+                    val intent = Intent(this@GuestActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                }
+                show()
+            }
         }
 
-        // image slider
         list.add(ImageData(R.drawable.slide1))
         list.add(ImageData(R.drawable.slide2))
         list.add(ImageData(R.drawable.slide3))
@@ -72,19 +60,12 @@ class HomeFragment : Fragment() {
         dots = ArrayList()
         setIndicator()
 
-        // indicator
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 selectedDot(position)
                 super.onPageSelected(position)
             }
         })
-
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         setUpTransformer()
 
@@ -102,21 +83,20 @@ class HomeFragment : Fragment() {
         binding.viewPager.setPageTransformer(transformer)
     }
 
-    //indicator start
     private fun selectedDot(position: Int) {
         val dotCount = min(list.size, 3) // Batasi dotCount menjadi maksimum 3
         for (i in 0 until dotCount) {
             if (i == position)
-                dots[i].setTextColor(ContextCompat.getColor(requireContext(), R.color.green_700))
+                dots[i].setTextColor(ContextCompat.getColor(this, R.color.green_700))
             else
-                dots[i].setTextColor(ContextCompat.getColor(requireContext(), R.color.green_200))
+                dots[i].setTextColor(ContextCompat.getColor(this, R.color.green_200))
         }
     }
 
     private fun setIndicator() {
         val dotCount = min(list.size, 3) // Batasi dotCount menjadi maksimum 3
         for (i in 0 until dotCount) {
-            dots.add(TextView(requireContext()))
+            dots.add(TextView(this))
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 dots[i].text = Html.fromHtml("&#9679", Html.FROM_HTML_MODE_LEGACY).toString()
             } else {
@@ -126,5 +106,4 @@ class HomeFragment : Fragment() {
             binding.dotsIndicator.addView(dots[i])
         }
     }
-    // indicator end
 }
