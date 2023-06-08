@@ -27,6 +27,14 @@
         style="@style/textH2Black"
         android:text="Nama Pupuk"/>
 
+    <TextView
+        android:id="@+id/tv_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/textH3Black"
+        android:text="Input"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"

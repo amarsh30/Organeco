@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.organeco.CalculatorInput
 import com.organeco.R
 import com.organeco.ResultActivity
 import com.organeco.databinding.ActivityCalculatorBinding
@@ -98,6 +99,13 @@ class CalculatorActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
                 intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.prediction)
+
+                val input = CalculatorInput(
+                    temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous
+                )
+                intentResult.putExtra(ResultActivity.EXTRA_INPUT, input)
+
+                startActivity(intentResult)
             }
             else -> {
                 binding.progressBar.visibility = View.GONE
