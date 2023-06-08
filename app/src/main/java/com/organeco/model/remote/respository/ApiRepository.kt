@@ -47,11 +47,29 @@ class ApiRepository(
         }
     }
 
-     fun postCalculator(temperature: Number, humidity: Number, moisture : Number, soil_type: Number, crop_type: Number, nitrogen: Number, potassium: Number, phosphorous: Number): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
+    fun postCalculator(
+        temperature: Number,
+        humidity: Number,
+        moisture: Number,
+        soil_type: Number,
+        crop_type: Number,
+        nitrogen: Number,
+        potassium: Number,
+        phosphorous: Number
+    ): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
         liveData {
             emit(MediatorResult.Loading)
             try {
-                val respon = apiService.postCalculator(temperature, humidity, moisture, soil_type, crop_type, nitrogen, potassium, phosphorous)
+                val respon = apiService.postCalculator(
+                    temperature,
+                    humidity,
+                    moisture,
+                    soil_type,
+                    crop_type,
+                    nitrogen,
+                    potassium,
+                    phosphorous
+                )
                 emit(MediatorResult.Success(respon))
             } catch (e: Exception) {
                 emit(MediatorResult.Error(e.message.toString()))
@@ -63,13 +81,15 @@ class ApiRepository(
     fun getUserName(): LiveData<String> = preferences.getNameKey().asLiveData()
     fun getIdUser(): LiveData<String> = preferences.getUserId().asLiveData()
     fun getOnBoardStatus(): LiveData<Boolean> = preferences.getOnBoardStatus().asLiveData()
+    fun getEmail(): LiveData<String> = preferences.getEmailKey().asLiveData()
 
     suspend fun saveUser(
         onBoardStatus: Boolean,
         userName: String,
+        email: String,
         tokenKey: String,
         userId: String
     ) {
-        preferences.savePreferences(onBoardStatus, userName, tokenKey, userId)
+        preferences.savePreferences(onBoardStatus, userName, email, tokenKey, userId)
     }
 }

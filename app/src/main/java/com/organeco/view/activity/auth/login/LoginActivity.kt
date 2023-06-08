@@ -100,6 +100,7 @@ class LoginActivity : AppCompatActivity() {
                         binding.progressBar.visibility = View.GONE
                         saveUserLogin(
                             it.data.data.name,
+                            it.data.data.email,
                             it.data.data.token,
                             it.data.data.userId,
                             onBoard = true,
@@ -125,6 +126,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveUserLogin(
         userName: String,
+        email: String,
         tokenKey: String,
         userId: String,
         onBoard: Boolean
@@ -132,6 +134,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.saveUserPreferences(
             onBoard,
             userName,
+            email,
             "Bearer $tokenKey",
             userId
         )

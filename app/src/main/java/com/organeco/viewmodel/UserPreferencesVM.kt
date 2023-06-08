@@ -14,15 +14,17 @@ class UserPreferencesVM(
     fun getTokenKey(): LiveData<String> = repository.getUserToken()
     fun getUserId(): LiveData<String> = repository.getIdUser()
     fun getOnBoardStatus(): LiveData<Boolean> = repository.getOnBoardStatus()
+    fun getEmail(): LiveData<String> = repository.getEmail()
 
     fun saveUserPreferences(
         onBoardStatus: Boolean,
         userName: String,
+        email: String,
         tokenKey: String,
         userId: String
     ) {
         viewModelScope.launch {
-            repository.saveUser(onBoardStatus, userName, tokenKey, userId)
+            repository.saveUser(onBoardStatus, userName, email, tokenKey, userId)
         }
     }
 }

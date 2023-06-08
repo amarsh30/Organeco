@@ -34,7 +34,7 @@ class ViewModelFactory private constructor(
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(
                     Injection.provideRepository(context),
-                    Injection.provideRepositoryMl(context),
+                    Injection.provideRepositoryMl(context)
                 )
             }.also { instance = it }
     }

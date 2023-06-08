@@ -18,8 +18,8 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        style="@style/textH2Black"
         android:id="@+id/tv_detail_name"
+        style="@style/textH2Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,8 +29,8 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_detail_img" />
 
     <TextView
-        style="@style/textH4Black"
         android:id="@+id/type_plant"
+        style="@style/textH4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -40,8 +40,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
 
     <TextView
-        style="@style/textRegular2Black"
         android:id="@+id/tv_detail_type_plant"
+        style="@style/textRegular2Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -51,8 +51,8 @@
         app:layout_constraintTop_toBottomOf="@+id/type_plant" />
 
     <TextView
-        style="@style/textH4Black"
         android:id="@+id/tv_description"
+        style="@style/textH4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -62,8 +62,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_type_plant" />
 
     <TextView
-        style="@style/textRegular2Black"
         android:id="@+id/tv_detail_description"
+        style="@style/textRegular2Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -74,4 +74,21 @@
         app:layout_constraintStart_toStartOf="@+id/tv_description"
         app:layout_constraintTop_toBottomOf="@+id/tv_description"
         app:layout_constraintVertical_bias="0.015" />
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab_bookmark"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="24dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:contentDescription="bookmark"-->
+<!--        android:visibility="visible"-->
+<!--        app:borderWidth="3dp"-->
+<!--        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:srcCompat="@drawable/ic_bookmark_white" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

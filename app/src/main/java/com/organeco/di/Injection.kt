@@ -15,8 +15,11 @@ object Injection {
         )
     }
 
-    fun provideRepositoryMl(context: Context) : ApiRepository {
-        return ApiRepository(ApiConfigMl.setApiService(), AuthenticationPreference.getInstance(context.dataStore))
+    fun provideRepositoryMl(context: Context): ApiRepository {
+        return ApiRepository(
+            ApiConfigMl.setApiService(),
+            AuthenticationPreference.getInstance(context.dataStore)
+        )
     }
 
 }

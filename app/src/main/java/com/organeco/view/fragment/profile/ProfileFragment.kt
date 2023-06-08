@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.organeco.databinding.FragmentProfileBinding
-import com.organeco.model.local.DummyAdapter
-import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
@@ -32,6 +30,10 @@ class ProfileFragment : Fragment() {
             binding.tvProfileName.text = it
         }
 
+        prefViewModel.getEmail().observe(viewLifecycleOwner) {
+            binding.tvEmail.text = it
+        }
+
         return binding.root
     }
 
@@ -40,6 +42,7 @@ class ProfileFragment : Fragment() {
         binding.btnLogout.setOnClickListener {
             prefViewModel.saveUserPreferences(
                 true,
+                "",
                 "",
                 "",
                 ""
