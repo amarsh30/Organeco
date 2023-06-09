@@ -96,7 +96,7 @@ class CalculatorActivity : AppCompatActivity() {
                 is MediatorResult.Success -> {
                     binding.progressBar.visibility = View.GONE
                     val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
-                    intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.prediction)
+                    intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.predictions)
 
                     val input = CalculatorInput(
                         temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous
