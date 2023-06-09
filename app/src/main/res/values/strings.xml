@@ -1,7 +1,13 @@
 <resources>
+    <integer-array name="data_image">
+        <item>@drawable/slide1</item>
+        <item>@drawable/slide2</item>
+        <item>@drawable/slide3</item>
+    </integer-array>
     <string name="app_name">Organeco</string>
     <string name="register">Register</string>
-    <string name="name">Name</string>
+    <string name="name">Nama</string>
+    <string name="name_account">Nama Akun</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="not_have_account">Belum punya akun?</string>
@@ -9,26 +15,34 @@
     <string name="login">Login</string>
     <string name="title_login">Selamat Datang &#xD;&#xA; Kembali</string>
     <string name="title_menu_1">Organeco</string>
-    <string name="title_menu_2">GHG emissions</string>
-    <string name="title_menu_3">Recycle Compose</string>
-    <string name="title_menu_4">Optimize Your Farming Practices!"</string>
+    <string name="title_menu_2">Emisi Gas Rumah Kaca</string>
+    <string name="title_menu_3">Daur Ulang Kompos</string>
+    <string name="title_menu_4">Optimalkan Praktik Pertanian Anda!"</string>
     <string name="desc_menu_1">Organeco, aplikasi inovatif untuk petani atau pengkebun, memberikan rekomendasi pupuk ramah lingkungan melalui analisis tanah dan panduan penggunaan pupuk organik.</string>
-    <string name="desc_menu_2">Belajar kapan pun, di mana pun, secara mandiri. Bebas memilih kelas sesuai minat belajar. Akses seumur hidup ke kelas dan forum diskusi setelah lulus.</string>
-    <string name="desc_menu_3">Aplikasi rekomendasi pupuk ramah lingkungan adalah sebuah aplikasi yang dirancang untuk membantu petani dan individu yang terlibat dalam pertanian dalam menggunakan pupuk yang ramah lingkungan.</string>
+    <string name="desc_menu_2">Dapat membuat suatu metode atau teknik penggunaan pupuk organik yang tidak menghasilkan gas emisi yang merugikan lingkungan.</string>
+    <string name="desc_menu_3">Aplikasi yang dirancang untuk membantu petani dan individu yang terlibat dalam pertanian dalam menggunakan pupuk yang ramah lingkungan.</string>
     <string name="desc_menu_4">"Ubah praktik pertanianmu dan perkebunanmu, kurangi dampak negatif, dan beralih ke pupuk ramah lingkungan dengan aplikasi ini!"</string>
-    <string name="get_started">Get Started</string>
-    <string name="guest">Guest</string>
+    <string name="get_started">Memulai</string>
+    <string name="guest">Tamu</string>
     <string name="Login_error">please check again</string>
     <string name="Login_form_error">Invalid form</string>
     <string name="password_error">Pssword kurang dari 6 karakter</string>
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
-
+    <string name="calculator">Calculator Pupuk</string>
+    <string name="calculator_fertilizer">Kalkulator Pupuk</string>
+    <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
     <string name="selected_item">Selected item:</string>
     <string-array name="Jenis_tanah">
         <item>tanah 1</item>
         <item>tanah 2</item>
         <item>tanah 3</item>
     </string-array>
-    
+
+    <string-array name="Jenis_Tanaman">
+        <item>tanaman 1</item>
+        <item>tanaman 2</item>
+        <item>tanaman 3</item>
+    </string-array>
+
 </resources>

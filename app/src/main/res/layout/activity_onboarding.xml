@@ -6,7 +6,22 @@
     android:layout_height="match_parent"
     android:background="@color/green_700"
     app:layoutDescription="@xml/activity_onboarding_scene"
-    tools:context=".view.start.OnboardingActivity">
+    tools:context=".view.activity.start.OnboardingActivity">
+
+    <Button
+        android:id="@+id/btnStarted"
+        style="@style/textH4White"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:background="@drawable/rounded_bg_button"
+        android:text="@string/get_started"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/menu2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ivPlant1"
@@ -30,31 +45,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
-        android:id="@+id/titleMenu1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="@string/title_menu_1"
-        style="@style/textH1White"
-        app:layout_constraintEnd_toEndOf="@+id/logoMenu1"
-        app:layout_constraintStart_toStartOf="@+id/logoMenu1"
-        app:layout_constraintTop_toBottomOf="@+id/logoMenu1" />
-
-    <TextView
-        android:id="@+id/descMenu1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center_horizontal"
-        android:text="@string/desc_menu_1"
-        style="@style/textReguler1White"
-        app:layout_constraintEnd_toEndOf="@+id/titleMenu1"
-        app:layout_constraintStart_toStartOf="@+id/titleMenu1"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu1" />
-
     <ImageView
         android:id="@+id/logoMenu2"
         android:layout_width="0dp"
@@ -65,31 +55,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
-        android:id="@+id/titleMenu2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        style="@style/textH1White"
-        app:layout_constraintEnd_toEndOf="@+id/logoMenu2"
-        app:layout_constraintStart_toStartOf="@+id/logoMenu2"
-        app:layout_constraintTop_toBottomOf="@+id/logoMenu2"
-        android:text="@string/title_menu_2" />
-
-    <TextView
-        android:id="@+id/descMenu2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center_horizontal"
-        android:text="@string/desc_menu_2"
-        style="@style/textReguler1White"
-        app:layout_constraintEnd_toEndOf="@+id/titleMenu2"
-        app:layout_constraintStart_toStartOf="@+id/titleMenu2"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu2" />
-
     <ImageView
         android:id="@+id/logoMenu3"
         android:layout_width="0dp"
@@ -99,31 +64,6 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
-
-    <TextView
-        android:id="@+id/titleMenu3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        style="@style/textH1White"
-        app:layout_constraintEnd_toEndOf="@+id/logoMenu3"
-        app:layout_constraintStart_toStartOf="@+id/logoMenu3"
-        app:layout_constraintTop_toBottomOf="@+id/logoMenu3"
-        android:text="@string/title_menu_3" />
-
-    <TextView
-        android:id="@+id/descMenu3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center_horizontal"
-        style="@style/textReguler1White"
-        app:layout_constraintEnd_toEndOf="@+id/titleMenu3"
-        app:layout_constraintStart_toStartOf="@+id/titleMenu3"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu3"
-        android:text="@string/desc_menu_3" />
 
     <ImageView
         android:id="@+id/logoMenu4"
@@ -136,29 +76,119 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <TextView
-        android:id="@+id/titleMenu4"
+        android:id="@+id/titleMenu1"
+        style="@style/textH2White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
-        style="@style/textH4White"
-        app:layout_constraintEnd_toEndOf="@+id/logoMenu4"
-        app:layout_constraintStart_toStartOf="@+id/logoMenu4"
-        app:layout_constraintTop_toBottomOf="@+id/logoMenu4"
-        android:text="@string/title_menu_4" />
+        android:text="@string/title_menu_1"
+        app:layout_constraintEnd_toEndOf="@+id/logoMenu1"
+        app:layout_constraintStart_toStartOf="@+id/logoMenu1"
+        app:layout_constraintTop_toBottomOf="@+id/logoMenu1" />
 
     <TextView
-        android:id="@+id/descMenu4"
+        android:id="@+id/descMenu1"
+        style="@style/textReguler1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center_horizontal"
+        android:text="@string/desc_menu_1"
+        app:layout_constraintEnd_toEndOf="@+id/titleMenu1"
+        app:layout_constraintStart_toStartOf="@+id/titleMenu1"
+        app:layout_constraintTop_toBottomOf="@+id/titleMenu1" />
+
+    <TextView
+        android:id="@+id/titleMenu2"
+        style="@style/textH2White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/title_menu_2"
+        app:layout_constraintEnd_toEndOf="@+id/logoMenu2"
+        app:layout_constraintStart_toStartOf="@+id/logoMenu2"
+        app:layout_constraintTop_toBottomOf="@+id/logoMenu2" />
+
+    <TextView
+        android:id="@+id/descMenu2"
         style="@style/textReguler1White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:gravity="center_horizontal"
+        android:text="@string/desc_menu_2"
+        app:layout_constraintEnd_toEndOf="@+id/titleMenu2"
+        app:layout_constraintStart_toStartOf="@+id/titleMenu2"
+        app:layout_constraintTop_toBottomOf="@+id/titleMenu2" />
+
+    <TextView
+        android:id="@+id/titleMenu3"
+        style="@style/textH2White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/title_menu_3"
+        app:layout_constraintEnd_toEndOf="@+id/logoMenu3"
+        app:layout_constraintStart_toStartOf="@+id/logoMenu3"
+        app:layout_constraintTop_toBottomOf="@+id/logoMenu3" />
+
+    <TextView
+        android:id="@+id/descMenu3"
+        style="@style/textReguler1White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:gravity="center_horizontal"
+        android:text="@string/desc_menu_3"
+        app:layout_constraintEnd_toEndOf="@+id/titleMenu3"
+        app:layout_constraintStart_toStartOf="@+id/titleMenu3"
+        app:layout_constraintTop_toBottomOf="@+id/titleMenu3" />
+
+    <TextView
+        android:id="@+id/titleMenu4"
+        style="@style/textH2White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/title_menu_4"
+        app:layout_constraintEnd_toEndOf="@+id/logoMenu4"
+        app:layout_constraintStart_toStartOf="@+id/logoMenu4"
+        app:layout_constraintTop_toBottomOf="@+id/logoMenu4" />
+
+    <TextView
+        android:id="@+id/descMenu4"
+        style="@style/textReguler1White"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:gravity="center_horizontal"
+        android:text="@string/desc_menu_4"
         app:layout_constraintEnd_toEndOf="@+id/titleMenu4"
         app:layout_constraintStart_toStartOf="@+id/titleMenu4"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu4"
-        android:text="@string/desc_menu_4" />
+        app:layout_constraintTop_toBottomOf="@+id/titleMenu4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGuest"
+        style="@style/textH4White"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0"
+        android:background="@drawable/rounded_bg_button_sec"
+        android:text="@string/guest"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnStarted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu1"
@@ -187,6 +217,7 @@
         app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
 
+
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu3"
         android:layout_width="12dp"
@@ -214,36 +245,5 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_circle_24"
         app:tint="@color/green_500" />
-
-    <Button
-        android:id="@+id/btnStarted"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:alpha="0"
-        style="@style/textH4White"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_bg_button"
-        android:text="@string/get_started"
-        app:layout_constraintBottom_toTopOf="@+id/menu2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnGuest"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:alpha="0"
-        style="@style/textH4White"
-        android:text="@string/guest"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_bg_button_sec"
-        app:layout_constraintBottom_toTopOf="@+id/menu2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

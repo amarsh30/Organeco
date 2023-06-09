@@ -1,7 +1,6 @@
 package com.organeco.view.customview
 
 import android.content.Context
-import android.graphics.Canvas
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
@@ -11,7 +10,7 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import com.organeco.view.utils.Utils.validEmailChecker
 
-class EmailCustom: AppCompatEditText, View.OnTouchListener {
+class EmailCustom : AppCompatEditText, View.OnTouchListener {
 
     constructor(context: Context) : super(context) {
         init()
@@ -21,7 +20,11 @@ class EmailCustom: AppCompatEditText, View.OnTouchListener {
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init()
     }
 
@@ -31,10 +34,10 @@ class EmailCustom: AppCompatEditText, View.OnTouchListener {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(word: CharSequence, start: Int, before: Int, count: Int) {
-                if (word.count() > 1){
-                    if (word.validEmailChecker()){
-                        Log.d("edit","safe")
-                    }else{
+                if (word.count() > 1) {
+                    if (word.validEmailChecker()) {
+                        Log.d("edit", "safe")
+                    } else {
                         error = "email not valid"
                     }
                 }
