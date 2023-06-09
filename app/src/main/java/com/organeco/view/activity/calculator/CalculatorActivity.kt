@@ -1,20 +1,18 @@
 package com.organeco.view.activity.calculator
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.organeco.CalculatorInput
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
-import com.organeco.ResultActivity
+import com.organeco.view.result.ResultActivity
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
-import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.viewmodel.CalculatorViewModel
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -43,7 +41,7 @@ class CalculatorActivity : AppCompatActivity() {
                 tanahSelectedValue = tanahValue[position]
 
                 Toast.makeText(this@CalculatorActivity,
-                getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue, Toast.LENGTH_SHORT).show()
+                    getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue, Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -91,28 +89,37 @@ class CalculatorActivity : AppCompatActivity() {
         val phosphorous = Integer.parseInt(binding.edPhosphorous.text.toString())
 
         calculatorViewModel.postCalculate(temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous).observe(this){
-        when(it) {
-            is MediatorResult.Loading -> {
-                binding.progressBar.visibility = View.VISIBLE
-            }
-            is MediatorResult.Success -> {
-                binding.progressBar.visibility = View.GONE
-                val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
-                intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.prediction)
+            when(it) {
+                is MediatorResult.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is MediatorResult.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
+                    intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.prediction)
 
-                val input = CalculatorInput(
-                    temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous
-                )
-                intentResult.putExtra(ResultActivity.EXTRA_INPUT, input)
+                    val input = CalculatorInput(
+                        temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous
+                    )
+                    intentResult.putExtra(ResultActivity.EXTRA_INPUT, input)
 
-                startActivity(intentResult)
-            }
-            else -> {
-                binding.progressBar.visibility = View.GONE
-                //TODO: Error messagenya
+                    startActivity(intentResult)
+                }
+                else -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this@CalculatorActivity, "Gagal", Toast.LENGTH_LONG).show()
+
+                }
             }
         }
-        }
 
+    }
+
+    private fun showMessage(message: String) {
+        Snackbar.make(
+            binding.root,
+            message,
+            Snackbar.LENGTH_LONG
+        ).show()
     }
 }

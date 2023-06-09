@@ -1,19 +1,20 @@
-package com.organeco
+package com.organeco.view.activity.calculator
 
 import android.os.Parcel
 import android.os.Parcelable
 
 data class CalculatorInput(
-    val temperature : Number,
-    val humidity : Number,
-    val moisture : Number,
-    val soilType : Number,
-    val cropType : Number,
-    val nitrogen : Number,
-    val potassium : Number,
-    val phosphorous : Number
+    val temperature: Number,
+    val humidity: Number,
+    val moisture: Number,
+    val soilType: Number,
+    val cropType: Number,
+    val nitrogen: Number,
+    val potassium: Number,
+    val phosphorous: Number
 ) : Parcelable {
-    constructor(parcel: Parcel) : this(        parcel.readDouble(),
+    constructor(parcel: Parcel) : this(
+        parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
@@ -38,7 +39,7 @@ data class CalculatorInput(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<CalculatorInput> {
+    companion object  CREATOR : Parcelable.Creator<CalculatorInput> {
         override fun createFromParcel(parcel: Parcel): CalculatorInput {
             return CalculatorInput(parcel)
         }

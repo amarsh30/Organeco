@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.result.ResultActivity">
 
     <TextView
         android:id="@+id/tv_prompt"
         style="@style/textH3Black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingTop="200dp"
         android:text="Pupuk yang cocok untukmu adalah"
-        android:gravity="center"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="228dp" />
 
     <TextView
         android:id="@+id/tv_result"
+        style="@style/textH2Black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
         android:gravity="center"
-        style="@style/textH2Black"
-        android:text="Nama Pupuk"/>
+        android:padding="30dp"
+        android:text="Nama Pupuk" />
 
     <TextView
         android:id="@+id/tv_input"
+        style="@style/textH3Black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        style="@style/textH3Black"
-        android:text="Input"/>
+        android:text="Input" />
 
     <View
         android:layout_width="match_parent"
@@ -49,8 +48,8 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_weight="1"
             android:layout_margin="8dp"
+            android:layout_weight="1"
             android:text="Simpan" />
 
         <Button

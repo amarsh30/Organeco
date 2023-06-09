@@ -1,10 +1,11 @@
-package com.organeco
+package com.organeco.view.result
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.organeco.databinding.ActivityLoginBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.organeco.R
 import com.organeco.databinding.ActivityResultBinding
+import com.organeco.view.activity.calculator.CalculatorInput
 
 class ResultActivity : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         if (CalculatorInput != null) {
-            val textInput = "temperature : ${input?.temperature.toString()} \nhumidity : ${input?.humidity.toString()} \nmoisture : ${input?.moisture.toString()} \nsoilType : ${input?.soilType.toString()} \ncropType : ${input?.cropType.toString()} \nnitrogen : ${input?.nitrogen.toString()} \npotassium : ${input?.potassium.toString()} \nphosphorous : ${input?.temperature.toString()} \n"
+            val textInput = "temperature : ${input?.temperature.toString()} \nhumidity : ${input?.humidity.toString()} \nmoisture : ${input?.moisture.toString()} \nsoilType : ${input?.soilType.toString()} \ncropType : ${input?.cropType.toString()} \nnitrogen : ${input?.nitrogen.toString()} \npotassium : ${input?.potassium.toString()} \nphosphorous : ${input?.phosphorous.toString()} \n"
             binding.tvInput.text = textInput
         }
 
