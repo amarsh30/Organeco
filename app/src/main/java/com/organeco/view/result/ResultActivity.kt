@@ -10,9 +10,11 @@ import com.organeco.view.activity.calculator.CalculatorInput
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
+        binding = ActivityResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val result = intent.getStringExtra(EXTRA_RESULT)
 

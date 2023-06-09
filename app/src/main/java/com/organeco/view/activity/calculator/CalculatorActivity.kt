@@ -114,12 +114,4 @@ class CalculatorActivity : AppCompatActivity() {
         }
 
     }
-
-    private fun showMessage(message: String) {
-        Snackbar.make(
-            binding.root,
-            message,
-            Snackbar.LENGTH_LONG
-        ).show()
-    }
 }
