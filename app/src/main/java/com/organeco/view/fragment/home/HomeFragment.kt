@@ -20,6 +20,7 @@ import com.organeco.R
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
+import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
@@ -59,6 +60,9 @@ class HomeFragment : Fragment() {
         // intent ke activity
         binding.cardCalculator.setOnClickListener {
             startActivity(Intent(requireContext(), CalculatorActivity::class.java))
+        }
+        binding.cardEligibility.setOnClickListener {
+            startActivity(Intent(requireContext(), CekSubsidiActivity::class.java))
         }
 
         // image slider

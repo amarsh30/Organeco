@@ -33,6 +33,10 @@
     <string name="calculator_fertilizer">Kalkulator Pupuk</string>
     <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
     <string name="selected_item">Selected item:</string>
+    <string name="cek_kelayakan_subsidi_pupuk">Cek Kelayakan Subsidi Pupuk</string>
+    <string name="npk">NPK</string>
+    <string name="urea">Urea</string>
+    <string name="luas_lahan_m_sup_2_sup">Luas Lahan (M<sup>2</sup>)</string>
     <string-array name="Jenis_tanah">
         <item>tanah 1</item>
         <item>tanah 2</item>
@@ -43,6 +47,18 @@
         <item>tanaman 1</item>
         <item>tanaman 2</item>
         <item>tanaman 3</item>
+    </string-array>
+
+    <string-array name="Jenis_Komoditas">
+        <item>Padi</item>
+        <item>Jagung</item>
+        <item>Kedelai</item>
+        <item>Cabai</item>
+        <item>Bawang Merah</item>
+        <item>Bawang Putih</item>
+        <item>Kopi</item>
+        <item>Tebu</item>
+        <item>Kakao</item>
     </string-array>
 
 </resources>
