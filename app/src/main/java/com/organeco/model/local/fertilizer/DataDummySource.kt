@@ -7,76 +7,53 @@ object DataDummySource {
         return listOf(
             DataDummy(
                 1,
-                "Pupuk Kompos",
-                "sayuran, buah-buahan, bunga, dan tanaman hias",
-                "Terbuat dari bahan organik seperti sisa-sisa tumbuhan, rumput, daun, dan limbah dapur. " +
-                        "Digunakan untuk meningkatkan kesuburan tanah dan menyediakan nutrisi penting.",
+                "Urea",
+                "Tanaman berbunga dan buah-buahan seperti mawar, anggrek, melon, dan stroberi.",
+                "Urea adalah pupuk nitrogen (N) yang umum digunakan. Pupuk ini mengandung nitrogen (N) sekitar 46%, yang merupakan sumber nutrisi yang penting untuk pertumbuhan tanaman. Urea sering digunakan dalam pertanian untuk meningkatkan pertumbuhan tanaman, karena nitrogen membantu dalam pembentukan daun hijau yang sehat. Pupuk urea sering digunakan secara luas karena merupakan sumber nitrogen yang penting bagi tanaman. Pupuk ini memberikan dorongan pertumbuhan yang cepat dan meningkatkan produksi tanaman.",
                 R.drawable.image1
             ),
             DataDummy(
                 2,
-                "Pupuk kandang",
-                "tanaman sayuran, buah-buahan, tanaman bunga, dan tanaman pohon.",
-                "Terbuat dari kotoran hewan seperti kotoran sapi, kambing, atau ayam. Mengandung nutrisi seperti nitrogen, fosfor, dan kalium yang diperlukan untuk pertumbuhan tanaman.",
+                "NPK 20-20",
+                " Tanaman pertanian umum seperti padi, jagung, kacang-kacangan, dan gandum.",
+                "Pupuk ini mengandung 20% nitrogen (N) dan 20% kalium (K). Pupuk dengan komposisi ini dapat digunakan untuk memberikan nutrisi seimbang pada tanaman, terutama pada fase pertumbuhan dan pembentukan buah. Pupuk dengan komposisi NPK 20-20 umum digunakan karena memberikan nutrisi seimbang antara nitrogen, fosfor, dan kalium. Pupuk ini cocok untuk berbagai jenis tanaman pertanian dan kebun.",
                 R.drawable.image2
             ),
             DataDummy(
                 3,
-                "Pupuk daun",
-                "sayuran, tanaman hias, dan tanaman buah.",
-                "Pupuk yang diterapkan melalui semprotan daun. Biasanya mengandung mikronutrien penting seperti zat besi, magnesium, dan mangan.",
+                "NPK 17-17-17",
+                "Tanaman sayuran, buah-buahan, dan tanaman hias.",
+                "Pupuk ini memiliki kandungan nitrogen (N), fosfor (P), dan kalium (K) masing-masing sebesar 17%. Pupuk ini sering digunakan secara umum untuk memberikan nutrisi seimbang kepada tanaman di berbagai fase pertumbuhan, baik untuk tanaman sayuran, buah-buahan, atau tanaman hias. Pupuk ini juga populer karena memberikan nutrisi seimbang dan dapat digunakan untuk berbagai jenis tanaman. Pupuk ini sering dipilih untuk memberikan nutrisi yang cukup pada fase pertumbuhan dan pembentukan buah.",
                 R.drawable.image3
             ),
             DataDummy(
                 4,
-                "Pupuk hijau",
-                "sayuran, tanaman buah, dan tanaman hias.",
-                "Terbuat dari bahan organik seperti sisa-sisa tumbuhan, rumput, daun, dan limbah dapur. " +
-                        "Digunakan untuk meningkatkan kesuburan tanah dan menyediakan nutrisi penting.",
+                "NPK 14-35-14",
+                "Tanaman sayuran (terong, tomat) dan tanaman berakar dalam (wortel, bit)",
+                "Pupuk ini mengandung 14% nitrogen (N), 35% fosfor (P), dan 14% kalium (K). Pupuk ini umumnya digunakan untuk memberikan nutrisi tambahan pada tanaman selama fase pertumbuhan awal dan pembentukan akar yang kuat. Pupuk ini umumnya digunakan untuk memberikan nutrisi pada fase pertumbuhan awal tanaman dan membantu perkembangan sistem akar yang kuat. Ini cocok untuk tanaman sayuran dan berakar dalam.",
                 R.drawable.image4
             ),
             DataDummy(
                 5,
-                "Pupuk limbah tumbuhan",
-                "sayuran, buah-buahan, tanaman hias, dan tanaman pangan.",
-                "Limbah pertanian seperti jerami, sekam padi, atau serbuk gergaji yang diubah menjadi pupuk organik untuk memperbaiki struktur tanah.",
+                "NPK 10-26-26",
+                "Tanaman berbunga dan buah-buahan seperti mawar, anggrek, melon, dan stroberi.",
+                "Pupuk ini memiliki kandungan nitrogen (N) sebesar 10%, fosfor (P) sebesar 26%, dan kalium (K) sebesar 26%. Pupuk dengan komposisi ini biasanya cocok untuk tanaman berbunga dan buah-buahan, karena fosfor dan kalium membantu dalam pembentukan bunga dan buah yang baik. Pupuk ini sering digunakan untuk tanaman berbunga dan buah-buahan karena kandungan fosfor dan kalium yang tinggi. Pupuk ini membantu dalam pembentukan bunga dan buah yang baik.",
                 R.drawable.image1
             ),
             DataDummy(
                 6,
-                "Pupuk alga",
-                "mikroba dan tanaman hias.",
-                "Pupuk yang berasal dari alga laut, kaya akan nutrisi seperti nitrogen, fosfor, dan kalium. Dapat membantu meningkatkan pertumbuhan dan kekebalan tanaman.",
+                "NPK 28-28",
+                "Tanaman buah-buahan seperti jeruk, apel, dan pisang.",
+                "Pupuk ini memiliki kandungan nitrogen (N) dan kalium (K) masing-masing sebesar 28%. Pupuk ini umumnya digunakan untuk memberikan nutrisi tambahan pada tanaman yang membutuhkan lebih banyak kalium, seperti tanaman buah-buahan dan tanaman berbunga. Pupuk ini umumnya digunakan pada tanaman buah-buahan yang membutuhkan tambahan kalium. Ini membantu dalam pertumbuhan buah yang baik dan meningkatkan ketahanan terhadap penyakit.",
                 R.drawable.image2
             ),
             DataDummy(
                 7,
-                "Pupuk Tulang",
-                "Buah-buahan, sayuran, bunga",
-                "Terbuat dari tulang hewan yang diolah menjadi serbuk halus. Mengandung fosfor dan kalsium yang baik untuk perkembangan akar dan struktur tanaman.",
+                "DAP",
+                "tanaman biji-bijian (gandum, jagung), sayuran berakar dalam (wortel, kentang), dan tanaman umbi-umbian (ubi jalar, singkong).",
+                "DAP merupakan kependekan dari \"Diammonium Phosphate\" (Fosfat Diamonium). Pupuk ini mengandung nitrogen (N) sekitar 18% dan fosfor (P) sebesar 46%. DAP adalah pupuk fosfat yang populer dan sering digunakan untuk membantu pertumbuhan akar dan pembentukan tunas pada tanaman. Pupuk DAP digunakan secara luas untuk memberikan tambahan fosfor pada tanaman. Ini cocok untuk tanaman biji-bijian, sayuran berakar dalam, dan tanaman umbi-umbian.",
                 R.drawable.image3
-            ),
-            DataDummy(
-                8,
-                "Pupuk bokashi",
-                "Tanaman di kebun, sayuran, buah-buahan, dan tanaman hias.",
-                "Pupuk organik fermentasi yang dibuat dengan mencampurkan bahan organik dengan mikroorganisme menguntungkan. Meningkatkan kualitas tanah dan menyediakan nutrisi bagi tanaman.",
-                R.drawable.image4
-            ),
-            DataDummy(
-                9,
-                "Pupuk limbah organik rumah tangga",
-                "sayuran, tanaman hias, dan tanaman buah.",
-                "Sisa-sisa makanan, seperti kulit buah, sayuran, atau ampas kopi, yang dikomposkan dan digunakan sebagai pupuk organik untuk tanaman.",
-                R.drawable.image1
-            ),
-            DataDummy(
-                10,
-                "Pupuk hayati",
-                "sayuran, buah-buahan, tanaman hias, dan tanaman pangan.",
-                "Pupuk yang mengandung mikroorganisme seperti bakteri atau jamur yang membantu meningkatkan kualitas tanah dan ketersediaan nutrisi.",
-                R.drawable.image2
-            ),
+            )
         )
     }
 
