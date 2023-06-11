@@ -34,15 +34,25 @@
     <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
     <string name="selected_item">Selected item:</string>
     <string-array name="Jenis_tanah">
-        <item>tanah 1</item>
-        <item>tanah 2</item>
-        <item>tanah 3</item>
+        <item>Sandy</item>
+        <item>Loamy</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Clayey</item>
     </string-array>
 
     <string-array name="Jenis_Tanaman">
-        <item>tanaman 1</item>
-        <item>tanaman 2</item>
-        <item>tanaman 3</item>
+        <item>Maize</item>
+        <item>Sugarcane</item>
+        <item>Cotton</item>
+        <item>Tobacco</item>
+        <item>Paddy</item>
+        <item>Barley</item>
+        <item>Wheat</item>
+        <item>Millets</item>
+        <item>Oil Seeds</item>
+        <item>Pulses</item>
+        <item>Ground Nuts</item>
     </string-array>
 
 </resources>
