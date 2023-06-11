@@ -77,6 +77,11 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="textRegular2Green" parent="latoRegular">
+        <item name="android:textColor">@color/green_700</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="textH1White" parent="latoBold">
         <item name="android:textColor">@color/gray_100</item>
         <item name="android:textSize">30sp</item>

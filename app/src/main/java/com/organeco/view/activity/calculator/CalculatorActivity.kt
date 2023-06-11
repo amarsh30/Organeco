@@ -13,6 +13,7 @@ import com.organeco.R
 import com.organeco.view.result.ResultActivity
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.view.activity.MainActivity
 import com.organeco.viewmodel.CalculatorViewModel
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -26,6 +27,12 @@ class CalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        supportActionBar?.hide()
 
         val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
         val tanahValue = listOf(1, 2, 3)
