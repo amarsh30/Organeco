@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -20,6 +21,7 @@ import com.organeco.R
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
+import com.organeco.view.activity.HumidityActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
@@ -58,7 +60,7 @@ class HomeFragment : Fragment() {
 
         // intent ke activity
         binding.cardCalculator.setOnClickListener {
-            startActivity(Intent(requireContext(), CalculatorActivity::class.java))
+            confirmationDialog()
         }
 
         // image slider
@@ -88,6 +90,34 @@ class HomeFragment : Fragment() {
 
         setUpTransformer()
 
+    }
+
+    // alert
+    private fun confirmationDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext()).apply {
+            setTitle("Konfirmasi")
+            setMessage("Apakah Anda ingin Input manual atau menggunakan IoT?")
+            setPositiveButton("Input Manual") { dialog, _ ->
+                dialog.dismiss()
+                navigateToCalculatorActivity()
+        }
+
+        }
+        alertDialogBuilder.setNegativeButton("Menggunakan IoT") { dialog, _ ->
+            dialog.dismiss()
+            navigateToHumidityActivity()
+        }
+        alertDialogBuilder.show()
+    }
+
+    private fun navigateToCalculatorActivity() {
+        val intent = Intent(requireContext(), CalculatorActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToHumidityActivity() {
+        val intent = Intent(requireContext(), HumidityActivity::class.java)
+        startActivity(intent)
     }
 
     // memberikan margin ke slider

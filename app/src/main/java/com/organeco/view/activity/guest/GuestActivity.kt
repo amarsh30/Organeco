@@ -7,6 +7,7 @@ import android.text.Html
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -17,6 +18,7 @@ import com.organeco.databinding.ActivityGuestBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.auth.login.LoginActivity
+import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
 import kotlin.math.abs

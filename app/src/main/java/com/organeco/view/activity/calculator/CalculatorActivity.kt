@@ -34,6 +34,9 @@ class CalculatorActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        val kelembaban = intent.getDoubleExtra("sensor/kelembaban", 0.0)
+        binding.edHumidity.setText(kelembaban.toInt().toString())
+
         val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
         val tanahValue = listOf(1, 2, 3)
         lateinit var tanahSelectedValue : Number
