@@ -22,6 +22,7 @@ import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.HumidityActivity
+import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
@@ -96,7 +97,7 @@ class HomeFragment : Fragment() {
     private fun confirmationDialog() {
         val alertDialogBuilder = AlertDialog.Builder(requireContext()).apply {
             setTitle("Konfirmasi")
-            setMessage("Apakah Anda ingin Input manual atau menggunakan IoT?")
+            setMessage("Apakah Kamu ingin Input manual atau menggunakan IoT?")
             setPositiveButton("Input Manual") { dialog, _ ->
                 dialog.dismiss()
                 navigateToCalculatorActivity()
@@ -105,7 +106,24 @@ class HomeFragment : Fragment() {
         }
         alertDialogBuilder.setNegativeButton("Menggunakan IoT") { dialog, _ ->
             dialog.dismiss()
-            navigateToHumidityActivity()
+            confirmationIot()
+        }
+        alertDialogBuilder.show()
+    }
+
+    private fun confirmationIot() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext()).apply {
+            setTitle("Konfirmasi IoT")
+            setMessage("Apakah Kamu sudah menghubungkan IoT?")
+            setPositiveButton("Sudah") { dialog, _ ->
+                dialog.dismiss()
+                navigateToHumidityActivity()
+            }
+
+        }
+        alertDialogBuilder.setNegativeButton("Belum") { dialog, _ ->
+            dialog.dismiss()
+            navigateToMainActivity()
         }
         alertDialogBuilder.show()
     }
@@ -119,6 +137,12 @@ class HomeFragment : Fragment() {
         val intent = Intent(requireContext(), HumidityActivity::class.java)
         startActivity(intent)
     }
+
+    private fun navigateToMainActivity() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
+    }
+
 
     // memberikan margin ke slider
     private fun setUpTransformer() {
