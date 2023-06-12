@@ -21,7 +21,7 @@ import com.organeco.R
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
-import com.organeco.view.activity.HumidityActivity
+import com.organeco.view.activity.humadity.HumidityActivity
 import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData

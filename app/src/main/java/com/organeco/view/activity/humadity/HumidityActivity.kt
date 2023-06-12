@@ -1,4 +1,4 @@
-package com.organeco.view.activity
+package com.organeco.view.activity.humadity
 
 import android.content.Intent
 import android.os.Bundle
