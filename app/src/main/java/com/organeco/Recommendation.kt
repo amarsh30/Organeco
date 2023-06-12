@@ -14,13 +14,13 @@ data class Recommendation(
     var id : Int = 0,
 
     @ColumnInfo(name = "temperature")
-    var temperature : Number = 0,
+    var temperature : Int = 0,
 
     @ColumnInfo(name = "humidity")
-    var humidity : Number = 0,
+    var humidity : Int = 0,
 
     @ColumnInfo(name = "moisture")
-    var moisture : Number = 0,
+    var moisture : Int = 0,
 
     @ColumnInfo(name = "soil_type")
     var soil_type : String? = null,
@@ -29,13 +29,13 @@ data class Recommendation(
     var crop_type : String? = null,
 
     @ColumnInfo(name = "nitrogen")
-    var nitrogen : Number = 0,
+    var nitrogen : Int = 0,
 
     @ColumnInfo(name = "potassium")
-    var potassium : Number = 0,
+    var potassium : Int = 0,
 
     @ColumnInfo(name = "phosphorous")
-    var phosphorous : Number = 0,
+    var phosphorous : Int = 0,
 
     @ColumnInfo(name = "result")
     var result : String? = null

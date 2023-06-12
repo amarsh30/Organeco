@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.organeco.Recommendation
 import com.organeco.databinding.ItemFertilizerBinding
 import com.organeco.model.local.fertilizer.DataDummy
 import com.organeco.view.activity.DetailActivity
 
 class DummyAdapter(
-    private val dataList: List<Recommendation>
+    private val dataList: List<DataDummy>
 ) : RecyclerView.Adapter<DummyAdapter.DummyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DummyViewHolder {
@@ -30,7 +29,7 @@ class DummyAdapter(
             intent.putExtra("data_dummy", dataList[holder.adapterPosition])
             Toast.makeText(
                 holder.itemView.context,
-                "Kamu memilih " + dataList[holder.adapterPosition].result,
+                "Kamu memilih " + dataList[holder.adapterPosition].name,
                 Toast.LENGTH_SHORT
             ).show()
             holder.itemView.context.startActivity(intent)
@@ -43,9 +42,9 @@ class DummyAdapter(
     inner class DummyViewHolder(private val binding: ItemFertilizerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: Recommendation) {
-            binding.tvItemName.text = data.result
-            binding.tvItemDescription.text = data.crop_type
+        fun bind(data: DataDummy) {
+            binding.tvItemName.text = data.name
+            binding.tvItemDescription.text = data.description
 //            binding.imgItemPhoto.setImageResource(data.image)
 
         }

@@ -17,6 +17,7 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.organeco.R
+import com.organeco.RecommendationViewModel
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
@@ -37,6 +38,12 @@ class HomeFragment : Fragment() {
     private lateinit var dots: ArrayList<TextView>
 
     private val prefViewModel: UserPreferencesVM by viewModels {
+        ViewModelFactory.getInstance(
+            requireContext()
+        )
+    }
+
+    private val recommendationViewModel : RecommendationViewModel by viewModels {
         ViewModelFactory.getInstance(
             requireContext()
         )
