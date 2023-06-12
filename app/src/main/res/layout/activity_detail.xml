@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_100"
     tools:context=".view.activity.detail.DetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/gray_100">
 
 
@@ -24,15 +25,16 @@
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:background="@color/gray_100"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            android:contentDescription="@string/arrow_back" />
 
         <TextView
             android:id="@+id/textView3"
@@ -40,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:text="Detail Pupuk"
+            android:text="@string/detail_fertilizer"
             app:layout_constraintBottom_toBottomOf="@+id/btnBack"
             app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintTop_toTopOf="@+id/btnBack" />
@@ -54,7 +56,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/detail_img_fertilizer" />
 
         <TextView
             android:id="@+id/tv_detail_name"
@@ -62,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Nama Tanaman"
+            android:text="@string/name_plant"
             app:layout_constraintEnd_toEndOf="@+id/iv_detail_img"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/iv_detail_img"
@@ -74,7 +77,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Jenis Tanaman :"
+        android:text="@string/plante_type_detail"
         app:layout_constraintEnd_toEndOf="@+id/tv_detail_name"
         app:layout_constraintStart_toStartOf="@+id/tv_detail_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
@@ -85,7 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Sayuran"
+        android:text="@string/vegetable"
         app:layout_constraintEnd_toEndOf="@+id/type_plant"
         app:layout_constraintStart_toStartOf="@+id/type_plant"
         app:layout_constraintTop_toBottomOf="@+id/type_plant" />
@@ -96,7 +99,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Deskripsi :"
+        android:text="@string/description_detail"
         app:layout_constraintEnd_toEndOf="@+id/tv_detail_type_plant"
         app:layout_constraintStart_toStartOf="@+id/tv_detail_type_plant"
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_type_plant" />
@@ -108,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
-            android:text="Pupuk adalah"
+            android:text="@string/detail_fertilizer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_description"
             app:layout_constraintHorizontal_bias="1.0"
@@ -116,15 +119,16 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_description"
             app:layout_constraintVertical_bias="0.015" />
 
-    <ImageButton
-        android:id="@+id/btnShare"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_bg_button"
-        app:layout_constraintEnd_toEndOf="@+id/iv_detail_img"
-        app:layout_constraintTop_toBottomOf="@+id/iv_detail_img"
-        app:srcCompat="@drawable/ic_baseline_share_24" />
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_bg_button"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detail_img"
+            app:layout_constraintTop_toBottomOf="@+id/iv_detail_img"
+            app:srcCompat="@drawable/ic_baseline_share_24"
+            android:contentDescription="@string/button_share" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

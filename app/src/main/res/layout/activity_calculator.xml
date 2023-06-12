@@ -38,15 +38,16 @@
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/gray_100"
                 app:layout_constraintBottom_toBottomOf="@+id/toolbar"
                 app:layout_constraintStart_toStartOf="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="@+id/toolbar"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+                android:contentDescription="@string/arrow_back" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -54,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:text="Calculator Pupuk"
+                android:text="@string/calculator_fertilizer"
                 app:layout_constraintBottom_toBottomOf="@+id/btnBack"
                 app:layout_constraintStart_toEndOf="@+id/btnBack"
                 app:layout_constraintTop_toTopOf="@+id/btnBack" />
@@ -66,8 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="Temperatur"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/temperature"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -97,8 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Kelembapan"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/humidity"
                 app:layout_constraintStart_toStartOf="@+id/tvTemperature"
                 app:layout_constraintTop_toBottomOf="@+id/temperature_text_input_layout" />
 
@@ -128,8 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Moisture"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/moisture"
                 app:layout_constraintStart_toStartOf="@+id/tv_humidity"
                 app:layout_constraintTop_toBottomOf="@+id/humidity_text_input_layout" />
 
@@ -159,8 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Tipe Tanah"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/soil_type"
                 app:layout_constraintStart_toStartOf="@+id/tv_moisture"
                 app:layout_constraintTop_toBottomOf="@+id/moisture_text_input_layout" />
 
@@ -170,9 +167,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tipeTanah" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_tipeTanah"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/tv_tipeTanaman"
@@ -180,8 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Tipe Tanaman"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/plant_type"
                 app:layout_constraintStart_toStartOf="@+id/tv_tipeTanah"
                 app:layout_constraintTop_toBottomOf="@+id/spinner_tipeTanah" />
 
@@ -191,6 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipeTanaman" />
@@ -201,8 +200,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Nitrogen"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/nitrogen"
                 app:layout_constraintStart_toStartOf="@+id/tv_tipeTanaman"
                 app:layout_constraintTop_toBottomOf="@+id/spinner_tipeTanaman" />
 
@@ -232,8 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Potasium"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/potasium"
                 app:layout_constraintStart_toStartOf="@+id/tv_nitrogen"
                 app:layout_constraintTop_toBottomOf="@+id/nitrogen_text_input_layout" />
 
@@ -263,8 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Phosphorous"
-                app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                android:text="@string/phosphorous"
                 app:layout_constraintStart_toStartOf="@+id/tv_potassium"
                 app:layout_constraintTop_toBottomOf="@+id/potassium_text_input_layout" />
 
@@ -308,7 +304,8 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="16dp"
-        android:text="Hitung"
+        android:text="@string/count"
+        android:textAllCaps="false"
         android:background="@drawable/rounded_bg_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
