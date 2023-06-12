@@ -9,8 +9,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
 import com.organeco.R
+import com.organeco.Recommendation
 import com.organeco.view.result.ResultActivity
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
@@ -41,8 +41,7 @@ class CalculatorActivity : AppCompatActivity() {
 
 
         val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
-        val tanahValue = listOf(1, 2, 3)
-        lateinit var tanahSelectedValue : Number
+        lateinit var tanahSelectedValue : String
 
         val spinnerTanah = binding.spinnerTipeTanah
         val spinnerTanahAdapter = ArrayAdapter(
@@ -51,7 +50,7 @@ class CalculatorActivity : AppCompatActivity() {
 
         spinnerTanah.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                tanahSelectedValue = tanahValue[position]
+                tanahSelectedValue = tanahDisplay[position]
 
                 Toast.makeText(this@CalculatorActivity,
                     getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue, Toast.LENGTH_SHORT).show()
@@ -63,8 +62,7 @@ class CalculatorActivity : AppCompatActivity() {
         }
 
         val tanamanDisplay = resources.getStringArray(R.array.Jenis_Tanaman)
-        val tanamanValue = listOf(1, 2, 3)
-        lateinit var tanamanSelectedValue : Number
+        lateinit var tanamanSelectedValue : String
 
         val spinnerTanaman = binding.spinnerTipeTanaman
         val spinnerTanamanAdapter = ArrayAdapter(
@@ -73,7 +71,7 @@ class CalculatorActivity : AppCompatActivity() {
 
         spinnerTanaman.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                tanamanSelectedValue = tanamanValue[position]
+                tanamanSelectedValue = tanamanDisplay[position]
 
                 Toast.makeText(this@CalculatorActivity,
                     getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue, Toast.LENGTH_LONG).show()
@@ -91,7 +89,7 @@ class CalculatorActivity : AppCompatActivity() {
 
     }
 
-    private fun calculate(tipeTanah : Number ,tipeTanaman : Number) {
+    private fun calculate(tipeTanah : String ,tipeTanaman : String) {
         val temperature = Integer.parseInt(binding.edTemperature.text.toString())
         val humidity = Integer.parseInt(binding.edHumidity.text.toString())
         val moisture = Integer.parseInt(binding.edMoisture.text.toString())
@@ -108,11 +106,12 @@ class CalculatorActivity : AppCompatActivity() {
                 }
                 is MediatorResult.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
-                    intentResult.putExtra(ResultActivity.EXTRA_RESULT, it.data.predictions)
 
-                    val input = CalculatorInput(
-                        temperature, humidity, moisture, soilType, cropType, nitrogen, potassium, phosphorous
+                    val result = it.data.predictions
+
+                    val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
+                    val input = Recommendation(
+                        temperature = temperature, humidity = humidity, moisture = moisture, soil_type = soilType, crop_type = cropType, nitrogen = nitrogen, potassium = potassium, phosphorous = phosphorous, result = result
                     )
                     intentResult.putExtra(ResultActivity.EXTRA_INPUT, input)
 

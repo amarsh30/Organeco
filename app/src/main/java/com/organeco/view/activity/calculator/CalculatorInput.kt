@@ -11,7 +11,8 @@ data class CalculatorInput(
     val cropType: Number,
     val nitrogen: Number,
     val potassium: Number,
-    val phosphorous: Number
+    val phosphorous: Number,
+    val result: String?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readDouble(),
@@ -21,7 +22,8 @@ data class CalculatorInput(
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
-        parcel.readDouble()
+        parcel.readDouble(),
+        parcel.readString()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -33,6 +35,7 @@ data class CalculatorInput(
         parcel.writeDouble(nitrogen.toDouble())
         parcel.writeDouble(potassium.toDouble())
         parcel.writeDouble(phosphorous.toDouble())
+        parcel.writeString(result)
     }
 
     override fun describeContents(): Int {

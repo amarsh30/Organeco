@@ -36,7 +36,7 @@ class GuestActivity : AppCompatActivity() {
         binding = ActivityGuestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
+//        dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
         binding.rvFertilizer.layoutManager = LinearLayoutManager(this)
         binding.rvFertilizer.adapter = dummyAdapter
 

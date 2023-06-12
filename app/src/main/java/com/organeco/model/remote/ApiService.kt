@@ -30,8 +30,8 @@ interface ApiService {
         @Field("temperature") temperature: Number,
         @Field("humidity") humidity: Number,
         @Field("moisture") moisture: Number,
-        @Field("soil_type") soil_type: Number,
-        @Field("crop_type") crop_type: Number,
+        @Field("soil_type") soil_type: String,
+        @Field("crop_type") crop_type: String,
         @Field("nitrogen") nitrogen: Number,
         @Field("potassium") potassium: Number,
         @Field("phosphorous") phosphorous: Number
