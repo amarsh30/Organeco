@@ -7,6 +7,7 @@ import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -28,6 +29,7 @@ import com.organeco.viewmodel.UserPreferencesVM
 import com.organeco.viewmodel.ViewModelFactory
 import kotlin.math.abs
 import kotlin.math.min
+
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
