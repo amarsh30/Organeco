@@ -27,13 +27,13 @@ interface ApiService {
     @FormUrlEncoded
     @POST("predict")
     suspend fun postCalculator(
-        @Field("temperature") temperature: Number,
-        @Field("humidity") humidity: Number,
-        @Field("moisture") moisture: Number,
+        @Field("temparature") temparature: Int,
+        @Field("humidity") humidity: Int,
+        @Field("moisture") moisture: Int,
         @Field("soil_type") soil_type: String,
         @Field("crop_type") crop_type: String,
-        @Field("nitrogen") nitrogen: Number,
-        @Field("potassium") potassium: Number,
-        @Field("phosphorous") phosphorous: Number
+        @Field("nitrogen") nitrogen: Int,
+        @Field("potassium") potassium: Int,
+        @Field("phosphorous") phosphorous: Int
     ): CalculatorResponse
 }

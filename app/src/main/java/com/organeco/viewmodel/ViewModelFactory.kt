@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.organeco.RecommendationViewModel
 import com.organeco.di.Injection
 import com.organeco.model.remote.respository.ApiRepository
 
@@ -58,7 +59,9 @@ class RecommendationViewModelFactory private constructor(private val mApplicatio
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return RecommendationViewModelFactory(mApplication) as T
+        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)){
+            return RecommendationViewModel(mApplication) as T
+        }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
 }
