@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingTop="200dp"
-        android:text="Pupuk yang cocok untukmu adalah"
+        android:text="@string/fertilizer_that_suits_you"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="30dp"
-        android:text="Nama Pupuk"
+        android:text="@string/fertilizer_type"
         app:layout_constraintTop_toBottomOf="@+id/tv_prompt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -71,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Input"
+        android:text="@string/input"
         app:layout_constraintTop_toBottomOf="@+id/tv_result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -84,25 +84,28 @@
         app:layout_constraintBottom_toTopOf="@id/btnSave" />
 
     <androidx.appcompat.widget.AppCompatButton
+        style="@style/textH4White"
+        android:textAllCaps="false"
         android:id="@+id/btnSave"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_bg_button_sec"
-        android:text="Simpan"
-        style="@style/textReguler1White"
+        android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/btnHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        style="@style/textH4White"
         android:id="@+id/btnHome"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="8dp"
         android:background="@drawable/rounded_bg_button"
-        android:text="Home"
+        android:text="@string/home"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

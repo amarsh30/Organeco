@@ -72,6 +72,13 @@
     <string name="farmer_card">Mempunyai kartu Tani</string>
     <string name="number_moisture">45.90980</string>
     <string name="result_calculate">Hasil Kalulator</string>
+    <string name="dry">60 – 100     = Kering</string>
+    <string name="normal">40 – 60 = Normal</string>
+    <string name="wet">0 – 39 = Basah</string>
+    <string name="save">Simpan</string>
+    <string name="home">Home</string>
+    <string name="input">Masukan</string>
+    <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
 
     <string-array name="Jenis_tanah">
         <item>Sandy</item>
