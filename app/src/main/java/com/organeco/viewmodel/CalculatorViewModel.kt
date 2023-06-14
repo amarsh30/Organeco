@@ -6,14 +6,14 @@ import com.organeco.model.remote.respository.ApiRepository
 class CalculatorViewModel(private val apiRepository: ApiRepository) : ViewModel() {
 
     fun postCalculate(
-        temperature: Number,
-        humidity: Number,
-        moisture: Number,
+        temperature: Int,
+        humidity: Int,
+        moisture: Int,
         soil_type: String,
         crop_type: String,
-        nitrogen: Number,
-        potassium: Number,
-        phosphorous: Number
+        nitrogen: Int,
+        potassium: Int,
+        phosphorous: Int
     ) =
         apiRepository.postCalculator(
             temperature,
