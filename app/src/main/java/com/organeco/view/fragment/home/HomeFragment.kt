@@ -42,13 +42,6 @@ class HomeFragment : Fragment() {
             requireContext()
         )
     }
-
-    private val recommendationViewModel : RecommendationViewModel by viewModels {
-        ViewModelFactory.getInstance(
-            requireContext()
-        )
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
