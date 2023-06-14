@@ -42,7 +42,7 @@ data class CalculatorInput(
         return 0
     }
 
-    companion object  CREATOR : Parcelable.Creator<CalculatorInput> {
+    companion object CREATOR : Parcelable.Creator<CalculatorInput> {
         override fun createFromParcel(parcel: Parcel): CalculatorInput {
             return CalculatorInput(parcel)
         }

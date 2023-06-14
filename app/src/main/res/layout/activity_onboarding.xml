@@ -28,57 +28,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
+        android:contentDescription="@string/background_plant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img"
-        android:contentDescription="@string/background_plant" />
+        app:srcCompat="@drawable/img" />
 
     <ImageView
         android:id="@+id/logoMenu1"
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:layout_marginStart="16dp"
+        android:contentDescription="@string/logo_organeco"
         android:src="@drawable/image1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        android:contentDescription="@string/logo_organeco" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/logoMenu2"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:contentDescription="@string/emission_gas"
         android:src="@drawable/image2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        android:contentDescription="@string/emission_gas" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/logoMenu3"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:contentDescription="@string/friendly_fertilizer"
         android:src="@drawable/image3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        android:contentDescription="@string/friendly_fertilizer" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/logoMenu4"
         android:layout_width="0dp"
         android:layout_height="300dp"
+        android:contentDescription="@string/agricultural_practices"
         android:src="@drawable/image4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        android:contentDescription="@string/agricultural_practices" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/titleMenu1"

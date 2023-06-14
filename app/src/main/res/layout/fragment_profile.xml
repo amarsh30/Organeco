@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/btnLogout"
+        style="@style/textH4White"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
@@ -25,21 +26,21 @@
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/icon_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/ic_baseline_person_24"
-        android:contentDescription="@string/icon_profile" />
+        app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <ImageView
         android:id="@+id/ivEmail"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/icon_email"
         android:src="@drawable/ic_baseline_email_24"
         app:layout_constraintEnd_toEndOf="@+id/ivProfile"
         app:layout_constraintStart_toStartOf="@+id/ivProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:contentDescription="@string/icon_email" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
     <TextView

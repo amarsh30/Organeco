@@ -1,14 +1,15 @@
-package com.organeco.view.result
+package com.organeco.view.activity.result
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.organeco.R
 import com.organeco.Recommendation
 import com.organeco.RecommendationViewModel
 import com.organeco.databinding.ActivityResultBinding
-import com.organeco.view.activity.calculator.CalculatorInput
+import com.organeco.view.activity.MainActivity
+import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.viewmodel.RecommendationViewModelFactory
 
 class ResultActivity : AppCompatActivity() {
@@ -22,6 +23,16 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
+        }
+
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
 
         recommendationViewModel = obtainViewModel(this@ResultActivity)
 

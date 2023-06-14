@@ -42,10 +42,12 @@ class ViewModelFactory private constructor(
     }
 }
 
-class RecommendationViewModelFactory private constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {
+class RecommendationViewModelFactory private constructor(private val mApplication: Application) :
+    ViewModelProvider.NewInstanceFactory() {
     companion object {
         @Volatile
         private var INSTANCE: RecommendationViewModelFactory? = null
+
         @JvmStatic
         fun getInstance(application: Application): RecommendationViewModelFactory {
             if (INSTANCE == null) {
@@ -59,7 +61,7 @@ class RecommendationViewModelFactory private constructor(private val mApplicatio
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)){
+        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)) {
             return RecommendationViewModel(mApplication) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")

@@ -7,10 +7,10 @@ object DataDummySource {
         return listOf(
             DataDummy(
                 1,
-                "Urea",
+                "NPK Urea",
                 "Tanaman berbunga dan buah-buahan seperti mawar, anggrek, melon, dan stroberi.",
                 "Urea adalah pupuk nitrogen (N) yang umum digunakan. Pupuk ini mengandung nitrogen (N) sekitar 46%, yang merupakan sumber nutrisi yang penting untuk pertumbuhan tanaman. Urea sering digunakan dalam pertanian untuk meningkatkan pertumbuhan tanaman, karena nitrogen membantu dalam pembentukan daun hijau yang sehat. Pupuk urea sering digunakan secara luas karena merupakan sumber nitrogen yang penting bagi tanaman. Pupuk ini memberikan dorongan pertumbuhan yang cepat dan meningkatkan produksi tanaman.",
-                R.drawable.urea
+                R.drawable.npkurea
             ),
             DataDummy(
                 2,
@@ -49,10 +49,10 @@ object DataDummySource {
             ),
             DataDummy(
                 7,
-                "DAP",
+                "NPK DAP",
                 "tanaman biji-bijian (gandum, jagung), sayuran berakar dalam (wortel, kentang), dan tanaman umbi-umbian (ubi jalar, singkong).",
                 "DAP merupakan kependekan dari \"Diammonium Phosphate\" (Fosfat Diamonium). Pupuk ini mengandung nitrogen (N) sekitar 18% dan fosfor (P) sebesar 46%. DAP adalah pupuk fosfat yang populer dan sering digunakan untuk membantu pertumbuhan akar dan pembentukan tunas pada tanaman. Pupuk DAP digunakan secara luas untuk memberikan tambahan fosfor pada tanaman. Ini cocok untuk tanaman biji-bijian, sayuran berakar dalam, dan tanaman umbi-umbian.",
-                R.drawable.dap
+                R.drawable.npkdap
             )
         )
     }

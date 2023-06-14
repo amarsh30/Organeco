@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [Recommendation::class], version = 1)
-abstract class RecommendationRoomDatabase : RoomDatabase(){
-    abstract fun recommendationDao() : RecommendationDao
+abstract class RecommendationRoomDatabase : RoomDatabase() {
+    abstract fun recommendationDao(): RecommendationDao
 
     companion object {
         @Volatile
@@ -17,9 +17,10 @@ abstract class RecommendationRoomDatabase : RoomDatabase(){
         fun getDatabase(context: Context): RecommendationRoomDatabase {
             if (INSTANCE == null) {
                 synchronized(RecommendationRoomDatabase::class.java) {
-                    INSTANCE = Room.databaseBuilder(context.applicationContext,
-                    RecommendationRoomDatabase::class.java, "recommendation.db"
-                        )
+                    INSTANCE = Room.databaseBuilder(
+                        context.applicationContext,
+                        RecommendationRoomDatabase::class.java, "recommendation.db"
+                    )
                         .build()
                 }
             }

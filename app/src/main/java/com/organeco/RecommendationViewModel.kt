@@ -4,10 +4,11 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 
-class RecommendationViewModel (application: Application) : ViewModel() {
-    private val mRecommendationRepository : RecommendationRepository = RecommendationRepository(application)
+class RecommendationViewModel(application: Application) : ViewModel() {
+    private val mRecommendationRepository: RecommendationRepository =
+        RecommendationRepository(application)
 
-    fun insert (recommendation: Recommendation){
+    fun insert(recommendation: Recommendation) {
         mRecommendationRepository.insert(recommendation)
     }
 
@@ -15,5 +16,6 @@ class RecommendationViewModel (application: Application) : ViewModel() {
         mRecommendationRepository.delete(recommendation)
     }
 
-    fun getAllRecommendation(): LiveData<List<Recommendation>> = mRecommendationRepository.getAllRecommendation()
+    fun getAllRecommendation(): LiveData<List<Recommendation>> =
+        mRecommendationRepository.getAllRecommendation()
 }

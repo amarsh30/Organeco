@@ -45,7 +45,7 @@ class DummyAdapter(
         fun bind(data: DataDummy) {
             binding.tvItemName.text = data.name
             binding.tvItemDescription.text = data.description
-//            binding.imgItemPhoto.setImageResource(data.image)
+            binding.imgItemPhoto.setImageResource(data.image)
 
         }
     }

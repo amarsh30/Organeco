@@ -8,4 +8,5 @@
     <color name="gray_500">#9E9E9E</color>
     <color name="gray_700">#212121</color>
     <color name="gray_100">#FAFAFA</color>
+    <color name="gray_000">#FFFFFF</color>
 </resources>

@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Dao
 interface RecommendationDao {
-    @Insert (onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(recommendation: Recommendation)
 
     @Delete

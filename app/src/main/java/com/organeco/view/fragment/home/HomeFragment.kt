@@ -23,9 +23,9 @@ import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
-import com.organeco.view.activity.moisture.MoistureActivity
 import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
+import com.organeco.view.activity.moisture.MoistureActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
 import com.organeco.viewmodel.UserPreferencesVM
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
         )
     }
 
-    private val recommendationViewModel : RecommendationViewModel by viewModels {
+    private val recommendationViewModel: RecommendationViewModel by viewModels {
         ViewModelFactory.getInstance(
             requireContext()
         )
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
             setPositiveButton("Input Manual") { dialog, _ ->
                 dialog.dismiss()
                 navigateToCalculatorActivity()
-        }
+            }
 
         }
         alertDialogBuilder.setNegativeButton("Menggunakan IoT") { dialog, _ ->

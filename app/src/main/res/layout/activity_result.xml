@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_100"
-    tools:context=".view.result.ResultActivity">
+    tools:context=".view.activity.result.ResultActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/gray_100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,12 +21,63 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/gray_100"
+        android:background="@color/gray_000"
         android:contentDescription="@string/arrow_back"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <Button
+        android:id="@+id/btnSave"
+        style="@style/textH4White"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_bg_button"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_prompt"
+        style="@style/textH3Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="@string/fertilizer_that_suits_you"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        style="@style/textH2Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/fertilizer_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_prompt" />
+
+    <TextView
+        android:id="@+id/tv_input"
+        style="@style/textRegular3Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
 
     <TextView
         android:id="@+id/textView3"
@@ -41,73 +90,26 @@
         app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="@+id/btnBack" />
 
-    <TextView
-        android:id="@+id/tv_prompt"
-        style="@style/textH3Black"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingTop="200dp"
-        android:text="@string/fertilizer_that_suits_you"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <TextView
-        android:id="@+id/tv_result"
-        style="@style/textH2Black"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp"
-        android:text="@string/fertilizer_type"
-        app:layout_constraintTop_toBottomOf="@+id/tv_prompt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_input"
-        style="@style/textH3Black"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/input"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_input"
-        app:layout_constraintBottom_toTopOf="@id/btnSave" />
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input" />
 
     <androidx.appcompat.widget.AppCompatButton
-        style="@style/textH4White"
-        android:textAllCaps="false"
-        android:id="@+id/btnSave"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_bg_button_sec"
-        android:text="@string/save"
-        app:layout_constraintBottom_toTopOf="@+id/btnHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        style="@style/textH4White"
         android:id="@+id/btnHome"
+        style="@style/textH4Black"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="8dp"
-        android:background="@drawable/rounded_bg_button"
+        android:background="@drawable/rounded_bg_button_sec"
         android:text="@string/home"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -76,9 +76,10 @@
     <string name="normal">40 – 60 = Normal</string>
     <string name="wet">0 – 39 = Basah</string>
     <string name="save">Simpan</string>
-    <string name="home">Home</string>
+    <string name="home">Kembali ke halaman utama</string>
     <string name="input">Masukan</string>
     <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
+    <string name="crop_type">Jenis Tanaman</string>
 
     <string-array name="Jenis_tanah">
         <item>Sandy</item>

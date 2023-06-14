@@ -4,10 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.databinding.ActivityDetailBinding
-import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.fertilizer.DataDummy
 import com.organeco.view.activity.MainActivity
-import com.organeco.view.fragment.home.HomeFragment
 
 class DetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityDetailBinding
@@ -35,7 +33,8 @@ class DetailActivity : AppCompatActivity() {
             dataDummy.name
             dataDummy.plantType
             dataDummy.description
-            val shareData = "${dataDummy.name} \n ${dataDummy.plantType} \n ${dataDummy.description}"
+            val shareData =
+                "${dataDummy.name} \n ${dataDummy.plantType} \n ${dataDummy.description}"
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_TEXT, shareData)
