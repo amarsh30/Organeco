@@ -22,7 +22,8 @@ import com.organeco.RecommendationViewModel
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
-import com.organeco.view.activity.humadity.HumidityActivity
+import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
+import com.organeco.view.activity.moisture.MoistureActivity
 import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
@@ -70,6 +71,11 @@ class HomeFragment : Fragment() {
         binding.cardCalculator.setOnClickListener {
             confirmationDialog()
         }
+
+        binding.cardEligibility.setOnClickListener {
+            startActivity(Intent(requireContext(), CekSubsidiActivity::class.java))
+        }
+
 
         // image slider
         list.add(ImageData(R.drawable.slide1))
@@ -141,7 +147,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToHumidityActivity() {
-        val intent = Intent(requireContext(), HumidityActivity::class.java)
+        val intent = Intent(requireContext(), MoistureActivity::class.java)
         startActivity(intent)
     }
 

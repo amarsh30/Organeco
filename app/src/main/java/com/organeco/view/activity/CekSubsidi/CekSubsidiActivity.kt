@@ -1,5 +1,6 @@
 package com.organeco.view.activity.CekSubsidi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.organeco.R
 import com.organeco.databinding.ActivityCekSubsidiBinding
+import com.organeco.view.activity.MainActivity
 
 class CekSubsidiActivity : AppCompatActivity() {
 
@@ -20,6 +22,10 @@ class CekSubsidiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCekSubsidiBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
         val komoditasDisplay = resources.getStringArray(R.array.Jenis_Komoditas)
         val komoditasValue = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)

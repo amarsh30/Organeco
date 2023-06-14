@@ -13,9 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Organeco"
-        tools:targetApi="31">
+        tools:targetApi="31"><activity
+        android:name=".view.activity.CekSubsidi.CekSubsidiActivity"
+        android:exported="false" />
+
         <activity
-            android:name=".view.activity.humadity.HumidityActivity"
+            android:name=".view.activity.moisture.MoistureActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -80,7 +80,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_bg_button_sec"
+        android:background="@drawable/rounded_bg_button_three"
         android:text="@string/guest"
         android:textColor="@color/gray_100"
         app:layout_constraintBottom_toBottomOf="parent"
