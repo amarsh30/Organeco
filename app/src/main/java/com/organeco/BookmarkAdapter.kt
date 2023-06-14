@@ -3,12 +3,9 @@ package com.organeco
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.organeco.databinding.ItemFertilizerBinding
-import java.util.*
-import kotlin.collections.ArrayList
 
-class BookmarkAdapter (private val listBookmark : ArrayList<Recommendation>) :
+class BookmarkAdapter (private val listBookmark : List<Recommendation>) :
     RecyclerView.Adapter<BookmarkAdapter.UserViewHolder>()
 {
     private var onItemClickCallback: OnItemClickCallback? = null
@@ -18,8 +15,11 @@ class BookmarkAdapter (private val listBookmark : ArrayList<Recommendation>) :
     }
 
     class UserViewHolder(var binding: ItemFertilizerBinding) : RecyclerView.ViewHolder(binding.root) {  //inner class UserViewHolder
-        fun binding(user: Recommendation) {
-
+        fun binding(recommendation: Recommendation) {
+            with(binding){
+                tvItemName.text = recommendation.result
+                tvItemDescription.text = recommendation.crop_type
+            }
         }
     }
 

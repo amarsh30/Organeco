@@ -49,7 +49,7 @@ class ResultActivity : AppCompatActivity() {
 
     private fun obtainViewModel(resultActivity: AppCompatActivity): RecommendationViewModel {
         val factory = RecommendationViewModelFactory.getInstance(resultActivity.application)
-        return ViewModelProvider(resultActivity, factory).get(RecommendationViewModel::class.java)
+        return ViewModelProvider(resultActivity, factory)[RecommendationViewModel::class.java]
     }
 
     companion object {
