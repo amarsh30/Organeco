@@ -9,8 +9,8 @@ class CalculatorViewModel(private val apiRepository: ApiRepository) : ViewModel(
         temperature: Number,
         humidity: Number,
         moisture: Number,
-        soil_type: Number,
-        crop_type: Number,
+        soil_type: String,
+        crop_type: String,
         nitrogen: Number,
         potassium: Number,
         phosphorous: Number

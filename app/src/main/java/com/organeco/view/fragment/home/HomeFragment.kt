@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,9 +18,13 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.organeco.R
+import com.organeco.RecommendationViewModel
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
+import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
+import com.organeco.view.activity.moisture.MoistureActivity
+import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
@@ -42,6 +47,12 @@ class HomeFragment : Fragment() {
         )
     }
 
+    private val recommendationViewModel : RecommendationViewModel by viewModels {
+        ViewModelFactory.getInstance(
+            requireContext()
+        )
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,8 +69,13 @@ class HomeFragment : Fragment() {
 
         // intent ke activity
         binding.cardCalculator.setOnClickListener {
-            startActivity(Intent(requireContext(), CalculatorActivity::class.java))
+            confirmationDialog()
         }
+
+        binding.cardEligibility.setOnClickListener {
+            startActivity(Intent(requireContext(), CekSubsidiActivity::class.java))
+        }
+
 
         // image slider
         list.add(ImageData(R.drawable.slide1))
@@ -89,6 +105,57 @@ class HomeFragment : Fragment() {
         setUpTransformer()
 
     }
+
+    // alert
+    private fun confirmationDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext()).apply {
+            setTitle("Konfirmasi")
+            setMessage("Apakah Kamu ingin Input manual atau menggunakan IoT?")
+            setPositiveButton("Input Manual") { dialog, _ ->
+                dialog.dismiss()
+                navigateToCalculatorActivity()
+        }
+
+        }
+        alertDialogBuilder.setNegativeButton("Menggunakan IoT") { dialog, _ ->
+            dialog.dismiss()
+            confirmationIot()
+        }
+        alertDialogBuilder.show()
+    }
+
+    private fun confirmationIot() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext()).apply {
+            setTitle("Konfirmasi IoT")
+            setMessage("Apakah Kamu sudah menghubungkan IoT?")
+            setPositiveButton("Sudah") { dialog, _ ->
+                dialog.dismiss()
+                navigateToHumidityActivity()
+            }
+
+        }
+        alertDialogBuilder.setNegativeButton("Belum") { dialog, _ ->
+            dialog.dismiss()
+            navigateToMainActivity()
+        }
+        alertDialogBuilder.show()
+    }
+
+    private fun navigateToCalculatorActivity() {
+        val intent = Intent(requireContext(), CalculatorActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToHumidityActivity() {
+        val intent = Intent(requireContext(), MoistureActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToMainActivity() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        startActivity(intent)
+    }
+
 
     // memberikan margin ke slider
     private fun setUpTransformer() {

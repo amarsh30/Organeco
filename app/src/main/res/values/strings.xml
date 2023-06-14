@@ -29,20 +29,89 @@
     <string name="password_error">Pssword kurang dari 6 karakter</string>
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
-    <string name="calculator">Calculator Pupuk</string>
     <string name="calculator_fertilizer">Kalkulator Pupuk</string>
     <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
     <string name="selected_item">Selected item:</string>
+    <string name="arrow_back">Panah Kembali</string>
+    <string name="temperature">Suhu</string>
+    <string name="humidity">Kelembapan Udara</string>
+    <string name="moisture">Kelembaban Tanah</string>
+    <string name="soil_type">Tipe Tanah</string>
+    <string name="potasium">Potasium</string>
+    <string name="phosphorous">Phosphorous</string>
+    <string name="count">Hitung</string>
+    <string name="plant_type">Tipe Tanaman</string>
+    <string name="nitrogen">Nitrogen</string>
+    <string name="detail_fertilizer">Detail Pupuk</string>
+    <string name="detail_img_fertilizer">Detail Gambar Pupuk</string>
+    <string name="name_plant">Nama Tanaman</string>
+    <string name="plante_type_detail">Jenis Tanaman :</string>
+    <string name="vegetable">Sayuran</string>
+    <string name="description_detail">Deskripsi :</string>
+    <string name="button_share">Tombol Button Share Content</string>
+    <string name="logo_organeco">Logo Organeco</string>
+    <string name="halo">Halo,</string>
+    <string name="fertilizer_that_is_often_used">Pupuk yang sering dipakai</string>
+    <string name="iot_moisture">IoT Kelembaban</string>
+    <string name="send_to_calculator">Kirim Data ke Kalkulator</string>
+    <string name="emission_gas">Emisi Gas</string>
+    <string name="friendly_fertilizer">Pupuk Ramah Lingkungan</string>
+    <string name="agricultural_practices">Praktik Pertanian</string>
+    <string name="background_plant">Background Tanaman</string>
+    <string name="icon_profile">icon profile</string>
+    <string name="icon_email">icon Email</string>
+    <string name="photo_fertilizer">photo fertilizer</string>
+    <string name="slider_fertilizer">Slider Pupuk</string>
+    <string name="cek_kelayakan_subsidi_pupuk">Cek Kelayakan Subsidi Pupuk</string>
+    <string name="npk">NPK</string>
+    <string name="urea">Urea</string>
+    <string name="luas_lahan_m_sup_2_sup">Luas Lahan (M<sup>2</sup>)</string>
+    <string name="check_subsidi">Cek Subsidi</string>
+    <string name="fertilizer_type">Jenis Pupuk</string>
+    <string name="farmer_group">Termasuk dalam Kelompok Tani</string>
+    <string name="farmer_card">Mempunyai kartu Tani</string>
+    <string name="number_moisture">45.90980</string>
+    <string name="result_calculate">Hasil Kalulator</string>
+    <string name="dry">60 – 100     = Kering</string>
+    <string name="normal">40 – 60 = Normal</string>
+    <string name="wet">0 – 39 = Basah</string>
+    <string name="save">Simpan</string>
+    <string name="home">Home</string>
+    <string name="input">Masukan</string>
+    <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
+
     <string-array name="Jenis_tanah">
-        <item>tanah 1</item>
-        <item>tanah 2</item>
-        <item>tanah 3</item>
+        <item>Sandy</item>
+        <item>Loamy</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Clayey</item>
     </string-array>
 
     <string-array name="Jenis_Tanaman">
-        <item>tanaman 1</item>
-        <item>tanaman 2</item>
-        <item>tanaman 3</item>
+        <item>Maize</item>
+        <item>Sugarcane</item>
+        <item>Cotton</item>
+        <item>Tobacco</item>
+        <item>Paddy</item>
+        <item>Barley</item>
+        <item>Wheat</item>
+        <item>Millets</item>
+        <item>Oil Seeds</item>
+        <item>Pulses</item>
+        <item>Ground Nuts</item>
+    </string-array>
+
+    <string-array name="Jenis_Komoditas">
+        <item>Padi</item>
+        <item>Jagung</item>
+        <item>Kedelai</item>
+        <item>Cabai</item>
+        <item>Bawang Merah</item>
+        <item>Bawang Putih</item>
+        <item>Kopi</item>
+        <item>Tebu</item>
+        <item>Kakao</item>
     </string-array>
 
 </resources>

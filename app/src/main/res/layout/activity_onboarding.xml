@@ -32,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/img" />
+        app:srcCompat="@drawable/img"
+        android:contentDescription="@string/background_plant" />
 
     <ImageView
         android:id="@+id/logoMenu1"
@@ -43,7 +44,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.3"
+        android:contentDescription="@string/logo_organeco" />
 
     <ImageView
         android:id="@+id/logoMenu2"
@@ -53,7 +55,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.3"
+        android:contentDescription="@string/emission_gas" />
 
     <ImageView
         android:id="@+id/logoMenu3"
@@ -63,7 +66,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.3"
+        android:contentDescription="@string/friendly_fertilizer" />
 
     <ImageView
         android:id="@+id/logoMenu4"
@@ -73,7 +77,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.3"
+        android:contentDescription="@string/agricultural_practices" />
 
     <TextView
         android:id="@+id/titleMenu1"
@@ -183,7 +188,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:alpha="0"
-        android:background="@drawable/rounded_bg_button_sec"
+        android:background="@drawable/rounded_bg_button_three"
         android:text="@string/guest"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/btnStarted"

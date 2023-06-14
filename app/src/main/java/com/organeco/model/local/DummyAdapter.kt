@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.organeco.databinding.ItemFertilizerBinding
 import com.organeco.model.local.fertilizer.DataDummy
-import com.organeco.view.activity.DetailActivity
+import com.organeco.view.activity.detail.DetailActivity
 
 class DummyAdapter(
     private val dataList: List<DataDummy>
@@ -45,7 +45,7 @@ class DummyAdapter(
         fun bind(data: DataDummy) {
             binding.tvItemName.text = data.name
             binding.tvItemDescription.text = data.description
-            binding.imgItemPhoto.setImageResource(data.image)
+//            binding.imgItemPhoto.setImageResource(data.image)
 
         }
     }

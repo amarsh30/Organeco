@@ -27,7 +27,8 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/ic_baseline_person_24" />
+        app:srcCompat="@drawable/ic_baseline_person_24"
+        android:contentDescription="@string/icon_profile" />
 
     <ImageView
         android:id="@+id/ivEmail"
@@ -37,7 +38,8 @@
         android:src="@drawable/ic_baseline_email_24"
         app:layout_constraintEnd_toEndOf="@+id/ivProfile"
         app:layout_constraintStart_toStartOf="@+id/ivProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:contentDescription="@string/icon_email" />
 
 
     <TextView
@@ -71,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Email"
+        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="@+id/ivEmail"
         app:layout_constraintStart_toEndOf="@+id/ivEmail"
         app:layout_constraintTop_toTopOf="@+id/ivEmail" />
@@ -82,7 +84,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Email"
+        android:text="@string/email"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view2"
