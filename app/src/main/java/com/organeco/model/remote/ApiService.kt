@@ -27,7 +27,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("predict")
     suspend fun postCalculator(
-        @Field("temperatire") temperature: Number,
+        @Field("temperature") temperature: Number,
         @Field("humidity") humidity: Number,
         @Field("moisture") moisture: Number,
         @Field("soil_type") soil_type: Number,
