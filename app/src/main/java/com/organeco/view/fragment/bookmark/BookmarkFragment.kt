@@ -12,7 +12,7 @@ import com.organeco.BookmarkAdapter
 import com.organeco.Recommendation
 import com.organeco.RecommendationViewModel
 import com.organeco.databinding.FragmentBookmarkBinding
-import com.organeco.view.result.ResultActivity
+import com.organeco.view.activity.result.ResultActivity
 import com.organeco.viewmodel.RecommendationViewModelFactory
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -30,8 +30,6 @@ class BookmarkFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentBookmarkBinding.inflate(layoutInflater)
-
-
 
         return binding.root
     }
@@ -57,24 +55,4 @@ private fun listBookmark() {
         })
     }
 }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//
-//        val layoutManager = LinearLayoutManager(requireContext())
-//        binding.rvDummy.layoutManager = layoutManager
-//        val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
-//        binding.rvDummy.addItemDecoration(itemDecoration)
-//
-//        val dummyAdapter = DummyAdapter(ArrayList())
-//        binding.rvDummy.adapter = dummyAdapter
-//
-//    }
-
-//    companion object {
-//        const val ARG_TAB = "tab_name"
-//        const val TAB_DUMMY = "dummy"
-//        const val TAB_BOOKMARK = "bookmark"
-//    }
 }

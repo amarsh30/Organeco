@@ -94,7 +94,7 @@
 
     <TextView
         android:id="@+id/descMenu1"
-        style="@style/textReguler1White"
+        style="@style/textRegular1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -119,7 +119,7 @@
 
     <TextView
         android:id="@+id/descMenu2"
-        style="@style/textReguler1White"
+        style="@style/textRegular1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -144,7 +144,7 @@
 
     <TextView
         android:id="@+id/descMenu3"
-        style="@style/textReguler1White"
+        style="@style/textRegular1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -169,7 +169,7 @@
 
     <TextView
         android:id="@+id/descMenu4"
-        style="@style/textReguler1White"
+        style="@style/textRegular1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

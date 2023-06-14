@@ -3,6 +3,7 @@ package com.organeco
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.organeco.databinding.ItemBookmarkBinding
 import com.organeco.databinding.ItemFertilizerBinding
 
 class BookmarkAdapter (private val listBookmark : List<Recommendation>) :
@@ -14,18 +15,25 @@ class BookmarkAdapter (private val listBookmark : List<Recommendation>) :
         this.onItemClickCallback = onItemClickCallback
     }
 
-    class UserViewHolder(var binding: ItemFertilizerBinding) : RecyclerView.ViewHolder(binding.root) {  //inner class UserViewHolder
+    class UserViewHolder(var binding: ItemBookmarkBinding) : RecyclerView.ViewHolder(binding.root) {  //inner class UserViewHolder
         fun binding(recommendation: Recommendation) {
             with(binding){
                 tvItemName.text = recommendation.result
-                tvItemDescription.text = recommendation.crop_type
+                tvItemTemparature.text = recommendation.temperature.toString()
+                tvItemHumidity.text = recommendation.humidity.toString()
+                tvItemMoisture.text = recommendation.moisture.toString()
+                tvItemSoilType.text = recommendation.soil_type
+                tvItemCropType.text = recommendation.crop_type
+                tvItemNitrogen.text = recommendation.nitrogen.toString()
+                tvItemPotassium.text = recommendation.potassium.toString()
+                tvItemPhosphorous.text = recommendation.phosphorous.toString()
             }
         }
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): UserViewHolder {
         val binding =
-            ItemFertilizerBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+            ItemBookmarkBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         return UserViewHolder(binding)
     }
 
