@@ -11,7 +11,7 @@ import com.organeco.model.remote.respository.ApiRepository
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
     private val repository: ApiRepository,
-    private val repositoryMl: ApiRepository
+    private val repositoryMl: ApiRepository,
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -42,12 +42,18 @@ class ViewModelFactory private constructor(
     }
 }
 
-class RecommendationViewModelFactory private constructor(private val mApplication: Application) :
-    ViewModelProvider.NewInstanceFactory() {
+class RecommendationViewModelFactory private constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)){
+            return RecommendationViewModel(mApplication) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: RecommendationViewModelFactory? = null
-
         @JvmStatic
         fun getInstance(application: Application): RecommendationViewModelFactory {
             if (INSTANCE == null) {
@@ -57,13 +63,5 @@ class RecommendationViewModelFactory private constructor(private val mApplicatio
             }
             return INSTANCE as RecommendationViewModelFactory
         }
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)) {
-            return RecommendationViewModel(mApplication) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
 }

@@ -3,6 +3,7 @@ package com.organeco
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.organeco.model.remote.respository.ApiRepository
 
 class RecommendationViewModel(application: Application) : ViewModel() {
     private val mRecommendationRepository: RecommendationRepository =
