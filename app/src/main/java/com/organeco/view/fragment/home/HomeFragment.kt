@@ -22,7 +22,7 @@ import com.organeco.viewmodel.RecommendationViewModel
 import com.organeco.databinding.FragmentHomeBinding
 import com.organeco.model.local.adapter.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
-import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
+import com.organeco.view.activity.checksubsidies.CekSubsidiActivity
 import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
 import com.organeco.view.activity.moisture.MoistureActivity

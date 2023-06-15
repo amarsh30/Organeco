@@ -1,4 +1,4 @@
-package com.organeco.view.activity.CekSubsidi
+package com.organeco.view.activity.checksubsidies
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.organeco.R
 import com.organeco.databinding.ActivityCekSubsidiBinding
@@ -43,9 +41,6 @@ class CekSubsidiActivity : AppCompatActivity() {
         spinnerKomoditas.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 komoditasSelectedValue = komoditasValue[position]
-
-//                Toast.makeText(this@CekSubsidiActivity,
-//                    getString(R.string.selected_item) + " " + komoditasDisplay[position] + "nilai rill komoditas adalah" + komoditasDisplay, Toast.LENGTH_LONG).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {

@@ -93,11 +93,6 @@ class CalculatorActivity : AppCompatActivity() {
             ) {
                 tanamanSelectedValue = tanamanDisplay[position]
 
-//                Toast.makeText(
-//                    this@CalculatorActivity,
-//                    getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue,
-//                    Toast.LENGTH_LONG
-//                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
