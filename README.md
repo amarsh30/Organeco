@@ -16,7 +16,7 @@
 4. Material Component
 
 <b>Libraries With</b>
-1. Networking
+1. Retrofit
 2. Logging
 3. DataStore
 4. Room
