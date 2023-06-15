@@ -26,6 +26,7 @@ class MoistureActivity : AppCompatActivity() {
         supportActionBar?.hide()
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
         }
 
         sensorRef.addValueEventListener(object : ValueEventListener {
@@ -44,9 +45,9 @@ class MoistureActivity : AppCompatActivity() {
         })
 
         binding.btnSend.setOnClickListener {
-            val humidity = binding.tvMoisture.text.toString().toDouble()
+            val moisture = binding.tvMoisture.text.toString().toDouble()
             val intent = Intent(this@MoistureActivity, CalculatorActivity::class.java)
-            intent.putExtra("sensor/kelembaban", humidity)
+            intent.putExtra("sensor/kelembaban", moisture)
             startActivity(intent)
         }
 

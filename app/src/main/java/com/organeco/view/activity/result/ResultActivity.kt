@@ -30,10 +30,12 @@ class ResultActivity : AppCompatActivity() {
         supportActionBar?.hide()
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, CalculatorActivity::class.java))
+            finish()
         }
 
         binding.btnHome.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
         }
 
 

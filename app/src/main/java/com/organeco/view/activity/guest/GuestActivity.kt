@@ -15,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.organeco.R
 import com.organeco.databinding.ActivityGuestBinding
 import com.organeco.model.local.DummyAdapter
+import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.auth.login.LoginActivity
 import com.organeco.view.viewpager.ImageData
 import com.organeco.view.viewpager.ImageSliderAdapter
@@ -32,8 +33,9 @@ class GuestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGuestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
-//        dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
+        dummyAdapter = DummyAdapter(DataDummySource.getDummyDataList())
         binding.rvFertilizer.layoutManager = LinearLayoutManager(this)
         binding.rvFertilizer.adapter = dummyAdapter
 

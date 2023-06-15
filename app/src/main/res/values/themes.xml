@@ -64,6 +64,11 @@
 
     <style name="textRegular3Black" parent="latoRegular">
         <item name="android:textColor">@color/gray_700</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textRegular4Black" parent="latoRegular">
+        <item name="android:textColor">@color/gray_700</item>
         <item name="android:textSize">18sp</item>
     </style>
 

@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/textView9"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -41,7 +41,7 @@
 
     <TextView
         android:id="@+id/textView11"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -103,7 +103,7 @@
 
     <TextView
         android:id="@+id/textView8"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

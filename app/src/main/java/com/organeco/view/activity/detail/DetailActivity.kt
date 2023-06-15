@@ -47,6 +47,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
         }
     }
 }

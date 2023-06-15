@@ -177,6 +177,13 @@
                 motion:attributeName="crossfade"
                 motion:customFloatValue="0" />
         </Constraint>
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="@+id/btnStarted"
+            android:layout_width="0dp"
+            android:id="@+id/textView12"
+            motion:layout_constraintTop_toTopOf="@+id/btnStarted"
+            motion:layout_constraintBottom_toBottomOf="@+id/btnStarted" />
     </ConstraintSet>
     <ConstraintSet
         android:id="@+id/menu3"

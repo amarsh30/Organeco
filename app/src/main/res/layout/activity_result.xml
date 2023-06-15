@@ -47,17 +47,17 @@
         style="@style/textH3Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/fertilizer_that_suits_you"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/tv_result"
-        style="@style/textH2Black"
+        style="@style/textH1Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -70,7 +70,7 @@
 
     <TextView
         android:id="@+id/tv_input"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -110,6 +110,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/logo_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

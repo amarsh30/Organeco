@@ -80,27 +80,28 @@
     <string name="input">Masukan</string>
     <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
     <string name="crop_type">Jenis Tanaman</string>
+    <string name="skip">Lewati</string>
 
     <string-array name="Jenis_tanah">
-        <item>Sandy</item>
-        <item>Loamy</item>
-        <item>Black</item>
-        <item>Red</item>
-        <item>Clayey</item>
+        <item>Berpasir</item>
+        <item>Berlumpur</item>
+        <item>Hitam</item>
+        <item>Merah</item>
+        <item>Tanah liat</item>
     </string-array>
 
     <string-array name="Jenis_Tanaman">
-        <item>Maize</item>
-        <item>Sugarcane</item>
-        <item>Cotton</item>
-        <item>Tobacco</item>
-        <item>Paddy</item>
-        <item>Barley</item>
-        <item>Wheat</item>
-        <item>Millets</item>
-        <item>Oil Seeds</item>
-        <item>Pulses</item>
-        <item>Ground Nuts</item>
+        <item>Jagung</item>
+        <item>Tebu</item>
+        <item>Kapas</item>
+        <item>Tembakau</item>
+        <item>Padi</item>
+        <item>Jelai</item>
+        <item>Gandum</item>
+        <item>Millet</item>
+        <item>Biji Minyak</item>
+        <item>Biji-bijian</item>
+        <item>Kacang-kacangan Tanah</item>
     </string-array>
 
     <string-array name="Jenis_Komoditas">

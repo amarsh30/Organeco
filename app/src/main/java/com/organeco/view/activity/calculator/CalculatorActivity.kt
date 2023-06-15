@@ -35,13 +35,14 @@ class CalculatorActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
         }
 
         supportActionBar?.hide()
 
         val kelembaban = intent.getDoubleExtra("sensor/kelembaban", 0.0)
         val formattedKelembaban = if (kelembaban == 0.0) "" else kelembaban.toInt().toString()
-        binding.edHumidity.setText(formattedKelembaban)
+        binding.edMoisture.setText(formattedKelembaban)
 
 
         val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
@@ -159,7 +160,6 @@ class CalculatorActivity : AppCompatActivity() {
                 else -> {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(this@CalculatorActivity, "Gagal", Toast.LENGTH_LONG).show()
-
                 }
             }
         }

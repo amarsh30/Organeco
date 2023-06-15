@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.organeco.R
 import com.organeco.databinding.ActivityCekSubsidiBinding
+import com.organeco.view.activity.MainActivity
 import com.organeco.view.fragment.home.HomeFragment
 
 class CekSubsidiActivity : AppCompatActivity() {
@@ -23,6 +24,12 @@ class CekSubsidiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCekSubsidiBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
+        }
 
         val komoditasDisplay = resources.getStringArray(R.array.Jenis_Komoditas)
         val komoditasValue = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)

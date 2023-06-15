@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/tvProfileName"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -70,7 +70,7 @@
 
     <TextView
         android:id="@+id/tvEmail"
-        style="@style/textRegular3Black"
+        style="@style/textRegular4Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

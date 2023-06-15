@@ -45,7 +45,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.tvLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+            finishAffinity()
         }
     }
 
