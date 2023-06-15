@@ -1,4 +1,4 @@
-![image](https://drive.google.com/file/d/1H6HKbV5fh-gVY0h9otLK7xETAcNQc5uV/view?usp=sharing)
+![image](https://drive.google.com/file/d/1H6HKbV5fh-gVY0h9otLK7xETAcNQc5uV/view)
 ## About The Project
 <b>About this app</b>
 <p>Organeco is a fertilizer recommendation app that could give you the suitable fertilizer by inputting the required condition of your current soil</p>
