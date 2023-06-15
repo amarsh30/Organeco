@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.R
-import com.organeco.Recommendation
+import com.organeco.model.local.entity.Recommendation
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
 import com.organeco.view.activity.MainActivity
@@ -63,11 +63,11 @@ class CalculatorActivity : AppCompatActivity() {
             ) {
                 tanahSelectedValue = tanahDisplay[position]
 
-                Toast.makeText(
-                    this@CalculatorActivity,
-                    getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue,
-                    Toast.LENGTH_SHORT
-                ).show()
+//                Toast.makeText(
+//                    this@CalculatorActivity,
+//                    getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue,
+//                    Toast.LENGTH_SHORT
+//                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -93,11 +93,11 @@ class CalculatorActivity : AppCompatActivity() {
             ) {
                 tanamanSelectedValue = tanamanDisplay[position]
 
-                Toast.makeText(
-                    this@CalculatorActivity,
-                    getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue,
-                    Toast.LENGTH_LONG
-                ).show()
+//                Toast.makeText(
+//                    this@CalculatorActivity,
+//                    getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue,
+//                    Toast.LENGTH_LONG
+//                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {

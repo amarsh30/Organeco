@@ -6,13 +6,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.organeco.Recommendation
-import com.organeco.RecommendationViewModel
+import com.organeco.model.local.entity.Recommendation
+import com.organeco.viewmodel.RecommendationViewModel
 import com.organeco.databinding.ActivityResultBinding
 import com.organeco.view.activity.MainActivity
 import com.organeco.view.activity.calculator.CalculatorActivity
-import com.organeco.view.activity.detail.DetailActivity
-import com.organeco.view.fragment.bookmark.BookmarkFragment
 import com.organeco.viewmodel.RecommendationViewModelFactory
 
 class ResultActivity : AppCompatActivity() {

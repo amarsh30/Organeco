@@ -44,8 +44,8 @@ class CekSubsidiActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 komoditasSelectedValue = komoditasValue[position]
 
-                Toast.makeText(this@CekSubsidiActivity,
-                    getString(R.string.selected_item) + " " + komoditasDisplay[position] + "nilai rill komoditas adalah" + komoditasDisplay, Toast.LENGTH_LONG).show()
+//                Toast.makeText(this@CekSubsidiActivity,
+//                    getString(R.string.selected_item) + " " + komoditasDisplay[position] + "nilai rill komoditas adalah" + komoditasDisplay, Toast.LENGTH_LONG).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {

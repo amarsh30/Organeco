@@ -18,9 +18,9 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.organeco.R
-import com.organeco.RecommendationViewModel
+import com.organeco.viewmodel.RecommendationViewModel
 import com.organeco.databinding.FragmentHomeBinding
-import com.organeco.model.local.DummyAdapter
+import com.organeco.model.local.adapter.DummyAdapter
 import com.organeco.model.local.fertilizer.DataDummySource
 import com.organeco.view.activity.CekSubsidi.CekSubsidiActivity
 import com.organeco.view.activity.MainActivity

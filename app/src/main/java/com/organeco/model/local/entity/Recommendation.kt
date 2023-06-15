@@ -1,4 +1,4 @@
-package com.organeco
+package com.organeco.model.local.entity
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

@@ -1,10 +1,10 @@
-package com.organeco
+package com.organeco.model.local.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.organeco.databinding.ItemBookmarkBinding
-import com.organeco.databinding.ItemFertilizerBinding
+import com.organeco.model.local.entity.Recommendation
 
 class BookmarkAdapter (private val listBookmark : List<Recommendation>) :
     RecyclerView.Adapter<BookmarkAdapter.UserViewHolder>()

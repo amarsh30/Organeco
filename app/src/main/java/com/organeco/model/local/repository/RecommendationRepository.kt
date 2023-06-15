@@ -1,7 +1,10 @@
-package com.organeco
+package com.organeco.model.local.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
+import com.organeco.model.local.entity.Recommendation
+import com.organeco.model.local.room.RecommendationDao
+import com.organeco.model.local.room.RecommendationRoomDatabase
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

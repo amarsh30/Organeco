@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.organeco.BookmarkAdapter
-import com.organeco.Recommendation
-import com.organeco.RecommendationViewModel
+import com.organeco.model.local.adapter.BookmarkAdapter
+import com.organeco.model.local.entity.Recommendation
+import com.organeco.viewmodel.RecommendationViewModel
 import com.organeco.databinding.FragmentBookmarkBinding
 import com.organeco.view.activity.result.ResultActivity
 import com.organeco.viewmodel.RecommendationViewModelFactory
-import com.organeco.viewmodel.ViewModelFactory
 
 class BookmarkFragment : Fragment() {
 

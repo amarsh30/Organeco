@@ -1,4 +1,4 @@
-package com.organeco.model.local
+package com.organeco.model.local.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
