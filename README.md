@@ -1,6 +1,6 @@
 ![image](https://github.com/amarsh30/Organeco/blob/FragmentUI/Assets/Mockup.png?raw=true)
 ## About The Project
-<b>About this app</b>
+<b>Overview</b>
 <p>Organeco is a fertilizer recommendation app that could give you the suitable fertilizer by inputting the required condition of your current soil</p>
 
 <b>Feature:</b>
