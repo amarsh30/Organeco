@@ -1,5 +1,6 @@
 package com.organeco.viewmodel
 
+import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -9,7 +10,7 @@ import com.organeco.model.remote.respository.ApiRepository
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
     private val repository: ApiRepository,
-    private val repositoryMl: ApiRepository
+    private val repositoryMl: ApiRepository,
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -37,5 +38,29 @@ class ViewModelFactory private constructor(
                     Injection.provideRepositoryMl(context)
                 )
             }.also { instance = it }
+    }
+}
+
+class RecommendationViewModelFactory private constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(RecommendationViewModel::class.java)){
+            return RecommendationViewModel(mApplication) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
+    }
+
+    companion object {
+        @Volatile
+        private var INSTANCE: RecommendationViewModelFactory? = null
+        @JvmStatic
+        fun getInstance(application: Application): RecommendationViewModelFactory {
+            if (INSTANCE == null) {
+                synchronized(RecommendationViewModelFactory::class.java) {
+                    INSTANCE = RecommendationViewModelFactory(application)
+                }
+            }
+            return INSTANCE as RecommendationViewModelFactory
+        }
     }
 }

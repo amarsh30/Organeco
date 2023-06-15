@@ -48,14 +48,14 @@ class ApiRepository(
     }
 
     fun postCalculator(
-        temperature: Number,
-        humidity: Number,
-        moisture: Number,
-        soil_type: Number,
-        crop_type: Number,
-        nitrogen: Number,
-        potassium: Number,
-        phosphorous: Number
+        temperature: Int,
+        humidity: Int,
+        moisture: Int,
+        soil_type: String,
+        crop_type: String,
+        nitrogen: Int,
+        potassium: Int,
+        phosphorous: Int
     ): LiveData<MediatorResult<CalculatorResponse>> = wrapperIdling {
         liveData {
             emit(MediatorResult.Loading)

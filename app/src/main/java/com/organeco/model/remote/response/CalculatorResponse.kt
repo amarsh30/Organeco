@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class CalculatorResponse(
 
-    @field:SerializedName("prediction")
-    val prediction: String,
+    @field:SerializedName("predictions")
+    val predictions: String,
 )

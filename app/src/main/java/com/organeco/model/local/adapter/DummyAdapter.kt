@@ -1,4 +1,4 @@
-package com.organeco.model.local
+package com.organeco.model.local.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.organeco.databinding.ItemFertilizerBinding
 import com.organeco.model.local.fertilizer.DataDummy
-import com.organeco.view.activity.DetailActivity
+import com.organeco.view.activity.detail.DetailActivity
 
 class DummyAdapter(
     private val dataList: List<DataDummy>

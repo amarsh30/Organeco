@@ -38,7 +38,7 @@ object ApiConfigMl {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://deploy-ml-388613.de.r.appspot.com/")
+            .baseUrl("https://organecoo-ml.et.r.appspot.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

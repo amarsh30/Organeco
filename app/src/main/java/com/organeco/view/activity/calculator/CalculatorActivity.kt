@@ -1,5 +1,7 @@
 package com.organeco.view.activity.calculator
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -8,8 +10,11 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.organeco.R
+import com.organeco.model.local.entity.Recommendation
 import com.organeco.databinding.ActivityCalculatorBinding
 import com.organeco.model.remote.utils.MediatorResult
+import com.organeco.view.activity.MainActivity
+import com.organeco.view.activity.result.ResultActivity
 import com.organeco.viewmodel.CalculatorViewModel
 import com.organeco.viewmodel.ViewModelFactory
 
@@ -28,9 +33,20 @@ class CalculatorActivity : AppCompatActivity() {
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finishAffinity()
+        }
+
+        supportActionBar?.hide()
+
+        val kelembaban = intent.getDoubleExtra("sensor/kelembaban", 0.0)
+        val formattedKelembaban = if (kelembaban == 0.0) "" else kelembaban.toInt().toString()
+        binding.edMoisture.setText(formattedKelembaban)
+
+
         val tanahDisplay = resources.getStringArray(R.array.Jenis_tanah)
-        val tanahValue = listOf(1, 2, 3)
-        lateinit var tanahSelectedValue: Number
+        lateinit var tanahSelectedValue: String
 
         val spinnerTanah = binding.spinnerTipeTanah
         val spinnerTanahAdapter = ArrayAdapter(
@@ -45,13 +61,8 @@ class CalculatorActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                tanahSelectedValue = tanahValue[position]
+                tanahSelectedValue = tanahDisplay[position]
 
-                Toast.makeText(
-                    this@CalculatorActivity,
-                    getString(R.string.selected_item) + " " + tanahDisplay[position] + "nilai rill tanah adalah " + tanahSelectedValue,
-                    Toast.LENGTH_SHORT
-                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -60,8 +71,7 @@ class CalculatorActivity : AppCompatActivity() {
         }
 
         val tanamanDisplay = resources.getStringArray(R.array.Jenis_Tanaman)
-        val tanamanValue = listOf(1, 2, 3)
-        lateinit var tanamanSelectedValue: Number
+        lateinit var tanamanSelectedValue: String
 
         val spinnerTanaman = binding.spinnerTipeTanaman
         val spinnerTanamanAdapter = ArrayAdapter(
@@ -76,13 +86,8 @@ class CalculatorActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                tanamanSelectedValue = tanamanValue[position]
+                tanamanSelectedValue = tanamanDisplay[position]
 
-                Toast.makeText(
-                    this@CalculatorActivity,
-                    getString(R.string.selected_item) + " " + tanamanDisplay[position] + "nilai rill tanaman adalah" + tanamanSelectedValue,
-                    Toast.LENGTH_LONG
-                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -94,9 +99,10 @@ class CalculatorActivity : AppCompatActivity() {
             calculate(tanahSelectedValue, tanamanSelectedValue)
         }
 
+
     }
 
-    private fun calculate(tipeTanah: Number, tipeTanaman: Number) {
+    private fun calculate(tipeTanah: String, tipeTanaman: String) {
         val temperature = Integer.parseInt(binding.edTemperature.text.toString())
         val humidity = Integer.parseInt(binding.edHumidity.text.toString())
         val moisture = Integer.parseInt(binding.edMoisture.text.toString())
@@ -118,13 +124,32 @@ class CalculatorActivity : AppCompatActivity() {
         ).observe(this) {
             when (it) {
                 is MediatorResult.Loading -> {
-                    // TODO: Loading visible
+                    binding.progressBar.visibility = View.VISIBLE
                 }
                 is MediatorResult.Success -> {
-                    // TODO: loading invisible
+                    binding.progressBar.visibility = View.GONE
+
+                    val result = it.data.predictions
+
+                    val intentResult = Intent(this@CalculatorActivity, ResultActivity::class.java)
+                    val input = Recommendation(
+                        temperature = temperature,
+                        humidity = humidity,
+                        moisture = moisture,
+                        soil_type = soilType,
+                        crop_type = cropType,
+                        nitrogen = nitrogen,
+                        potassium = potassium,
+                        phosphorous = phosphorous,
+                        result = result
+                    )
+                    intentResult.putExtra(ResultActivity.EXTRA_INPUT, input)
+
+                    startActivity(intentResult)
                 }
                 else -> {
-                    // TODO: error handling
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this@CalculatorActivity, "Gagal", Toast.LENGTH_LONG).show()
                 }
             }
         }

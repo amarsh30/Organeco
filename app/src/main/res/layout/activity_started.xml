@@ -20,13 +20,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descMenu4" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btbGues"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_bg_button_three"
+        android:text="@string/guest"
+        android:textColor="@color/gray_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
     <ImageView
         android:id="@+id/ivPlant1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-30dp"
+        android:contentDescription="@string/background_plant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +49,7 @@
         android:id="@+id/logoMenu4"
         android:layout_width="0dp"
         android:layout_height="190dp"
+        android:contentDescription="@string/agricultural_practices"
         android:src="@drawable/image4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +60,7 @@
 
     <TextView
         android:id="@+id/descMenu4"
-        style="@style/textReguler1White"
+        style="@style/textRegular1White"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -74,17 +87,6 @@
         app:layout_constraintStart_toStartOf="@+id/logoMenu4"
         app:layout_constraintTop_toBottomOf="@+id/logoMenu4" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btbGues"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_bg_button_sec"
-        android:text="@string/guest"
-        android:textColor="@color/gray_100"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnStart"
-        app:layout_constraintStart_toStartOf="@+id/btnStart"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

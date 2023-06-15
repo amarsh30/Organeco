@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_100"
     tools:context=".view.activity.auth.register.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,11 +19,11 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_bg_button"
             android:text="@string/register"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,12 +34,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
+            android:autofillHints=""
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_register"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            tools:ignore="LabelFor" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -101,16 +102,14 @@
 
         <TextView
             android:id="@+id/textView5"
+            style="@style/textRegular3Black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/have_account"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btnRegister"
-            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
-            app:layout_constraintVertical_bias="0.6" />
+            app:layout_constraintStart_toStartOf="@+id/btnRegister" />
 
         <TextView
             android:id="@+id/tvLogin"
