@@ -26,5 +26,5 @@
 <p> Use Databse Real-time with Firebase</p>
 
 ### Check Moisture with IoT
-![image](https://github.com/amarsh30/Organeco/blob/FragmentUI/Assets/iot.jpg?raw=true)
+![image](https://github.com/amarsh30/Organeco/blob/FragmentUI/Assets/iot2.jpg?raw=true)
 
