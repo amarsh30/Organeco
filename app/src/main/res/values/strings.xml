@@ -5,15 +5,14 @@
         <item>@drawable/slide3</item>
     </integer-array>
     <string name="app_name">Organeco</string>
-    <string name="register">Register</string>
+    <string name="register">Daftar</string>
     <string name="name">Nama</string>
     <string name="name_account">Nama Akun</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="password">Kata Sandi</string>
     <string name="not_have_account">Belum punya akun?</string>
     <string name="have_account">Sudah punya akun?</string>
-    <string name="login">Login</string>
-    <string name="title_login">Selamat Datang &#xD;&#xA; Kembali</string>
+    <string name="login">Masuk</string>
     <string name="title_menu_1">Organeco</string>
     <string name="title_menu_2">Emisi Gas Rumah Kaca</string>
     <string name="title_menu_3">Daur Ulang Kompos</string>
@@ -27,8 +26,8 @@
     <string name="Login_error">please check again</string>
     <string name="Login_form_error">Invalid form</string>
     <string name="password_error">Pssword kurang dari 6 karakter</string>
-    <string name="logout">Logout</string>
-    <string name="profile">Profile</string>
+    <string name="logout">Keluar</string>
+    <string name="profile">Profil</string>
     <string name="recommendetion_fertilizer">Rekomendasi Pupuk</string>
     <string name="recommended_fetilizer">Rekomendasi Pupuk</string>
     <string name="selected_item">Selected item:</string>
@@ -76,11 +75,10 @@
     <string name="normal">40 – 60 = Normal</string>
     <string name="wet">0 – 39 = Basah</string>
     <string name="save">Simpan</string>
-    <string name="home">Kembali ke halaman utama</string>
+    <string name="home">Kembali ke Halaman Utama</string>
     <string name="input">Masukan</string>
     <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
     <string name="crop_type">Jenis Tanaman</string>
-    <string name="skip">Lewati</string>
     <string name="colon">:</string>
 
     <string-array name="Jenis_tanah">
