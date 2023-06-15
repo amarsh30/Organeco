@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,18 +19,17 @@
 
         <TextView
             android:id="@+id/tv_item_name"
-            style="@style/textH1White"
+            style="@style/textRegular1White"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="@string/fertilizer_type"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            tools:text="Nama pupuk" />
+            card_view:layout_constraintStart_toStartOf="@+id/guideline"
+            card_view:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_item_temparature"
             style="@style/textRegular1White"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,15 +39,15 @@
             card_view:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
 
         <TextView
-            android:id="@+id/tv_item_temparature"
+            android:id="@+id/textView2"
             style="@style/textRegular1White"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/temperature"
-            card_view:layout_constraintBottom_toBottomOf="@+id/textView2"
-            card_view:layout_constraintEnd_toEndOf="@+id/tv_item_name"
-            card_view:layout_constraintStart_toStartOf="@+id/guideline"
-            card_view:layout_constraintTop_toTopOf="@+id/textView2" />
+            card_view:layout_constraintEnd_toEndOf="@+id/textView28"
+            card_view:layout_constraintStart_toStartOf="@+id/textView28"
+            card_view:layout_constraintTop_toBottomOf="@+id/textView28" />
 
         <TextView
             android:id="@+id/textView13"
@@ -64,15 +62,12 @@
         <TextView
             android:id="@+id/tv_item_humidity"
             style="@style/textRegular1White"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/humidity"
-            card_view:layout_constraintBottom_toBottomOf="@+id/textView13"
-            card_view:layout_constraintEnd_toEndOf="@+id/tv_item_temparature"
-            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@+id/guideline"
-            card_view:layout_constraintTop_toTopOf="@+id/textView13"
-            card_view:layout_constraintVertical_bias="0.0" />
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_temparature" />
 
         <TextView
             android:id="@+id/textView15"
@@ -90,10 +85,10 @@
             style="@style/textRegular1White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/moisture"
-            card_view:layout_constraintBottom_toBottomOf="@+id/textView15"
             card_view:layout_constraintStart_toStartOf="@+id/guideline"
-            card_view:layout_constraintTop_toTopOf="@+id/textView15" />
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_humidity" />
 
         <TextView
             android:id="@+id/textView17"
@@ -291,6 +286,28 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             card_view:layout_constraintGuide_begin="160dp" />
+
+        <TextView
+            style="@style/textRegular1White"
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fertilizer_type"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView29"
+            style="@style/textRegular1White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/colon"
+            card_view:layout_constraintBottom_toBottomOf="@+id/textView28"
+            card_view:layout_constraintEnd_toStartOf="@+id/guideline"
+            card_view:layout_constraintTop_toTopOf="@+id/textView28"
+            card_view:layout_constraintVertical_bias="0.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
