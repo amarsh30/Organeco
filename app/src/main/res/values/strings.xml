@@ -81,6 +81,7 @@
     <string name="crop_type">Jenis Tanaman</string>
     <string name="colon">:</string>
     <string name="organeco">Organeco</string>
+    <string name="no_data">Tidak ada data</string>
 
     <string-array name="Jenis_tanah">
         <item>Berpasir</item>
