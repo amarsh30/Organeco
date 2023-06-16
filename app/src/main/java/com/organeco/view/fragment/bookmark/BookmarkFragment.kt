@@ -42,6 +42,7 @@ class BookmarkFragment : Fragment() {
 
 private fun listBookmark() {
     recommendationViewModel.getAllRecommendation().observe(viewLifecycleOwner) {
+        checkData(it)
         adapter = BookmarkAdapter(it)
         binding.rvBookmark.adapter = adapter
         binding.rvBookmark.layoutManager = LinearLayoutManager(requireActivity())
@@ -54,4 +55,15 @@ private fun listBookmark() {
         })
     }
 }
+
+    private fun checkData(list: List<Recommendation>){
+        if (list.isEmpty()) {
+            binding.apply {
+                ivNotFound.visibility = View.VISIBLE
+                tvNotFound.visibility = View.VISIBLE
+            }
+
+
+        }
+    }
 }
