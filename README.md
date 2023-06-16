@@ -12,6 +12,7 @@
 <b>Made With</b>
 1. Kotlin
 2. MVVM
+3. Injection
 
 <b>Libraries With</b>
 1. Retrofit
