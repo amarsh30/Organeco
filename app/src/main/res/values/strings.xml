@@ -80,6 +80,7 @@
     <string name="fertilizer_that_suits_you">Pupuk yang cocok untukmu adalah</string>
     <string name="crop_type">Jenis Tanaman</string>
     <string name="colon">:</string>
+    <string name="organeco">Organeco</string>
 
     <string-array name="Jenis_tanah">
         <item>Berpasir</item>
