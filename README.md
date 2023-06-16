@@ -11,9 +11,7 @@
 <b>App Development</b>
 <b>Made With</b>
 1. Kotlin
-2. Navigation Component
-3. MVVM
-4. Material Component
+2. MVVM
 
 <b>Libraries With</b>
 1. Retrofit
